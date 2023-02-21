@@ -1,0 +1,197 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#header{
+    width: 100%;
+    padding-top: 12px;
+    padding-bottom:12px;
+    z-index: 10;
+}
+#header-top{
+ display: flex;
+ width: 100%;
+
+    align-items: center;
+    justify-content: space-between;
+}
+.area{
+    margin: 16px;
+    display: flex;
+    align-items: center;
+}
+.logo{
+    margin: 10px;
+}
+.tin-moi{
+    text-decoration: none;
+    color: black;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 14px;
+    border: 1px solid #ccc;
+    border-radius: 123px;
+    margin-right: 8px;
+    line-height: 30px;
+    margin: 10px 5px;
+}
+a{
+    color: black;
+}
+.thong-tin img{
+    margin: 0 8px 0 0;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 26px;
+    height: 26px;
+}
+.thoi-tiet{
+ margin: 10px 5px;
+}
+.text-header{
+    padding: 10px 0;
+}
+.nhiet-do{
+    padding-bottom: 50px;
+}
+.dang-nhap{
+    border-left:solid 1px #ccc ;
+    margin: 20px 0;
+    margin-left: 10px;
+}
+.login{
+    background: transparent none;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    color: gray;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    padding:0 20px;
+    font-size: 16px;
+}
+.bi{
+    padding:0 10px;
+}
+.tim-kiem{
+margin: 16px 0;
+}
+.menu{
+    width: 100%;
+    margin: 10px 0;;
+    font-family: Helvetica, sans-serif;
+    font-size: 14.5px;
+    border-bottom:solid 1px #ccc ;
+    position:sticky;
+}
+.menu ol li{
+    list-style-type: none;
+    display: inline;
+    margin-left: 3px;
+    
+}
+#body{
+    margin: 20px 0;
+}
+.container-body{
+    display: flex;
+}
+.left-mxh{
+    margin-right: 10px;
+    width: 10%;
+}
+.left-mxh ul li{
+    list-style-type: none;
+    font-size: 30px;
+    opacity: 60%;
+}
+.mxh{
+    margin: 0 auto;
+    list-style: none;
+    position: sticky;
+    top: 60px;
+    width: 35px;
+}
+.binh-luan{
+    margin-top: 16px;
+    padding: 16px 0 0;
+    border-top: 1px solid #eee;
+}
+.center-noi-dung{
+    width: 60%;
+}
+.center-noi-dung ul li{
+    list-style-type: none;
+    font-size: 20px;
+    opacity: 60%;
+}
+.Tieu-de{
+    font-size: 35px;
+}
+.time {
+    margin: 20px 0;
+}
+.time img{
+    width: 32px;
+    height: auto;
+}
+.time a{
+    margin: 0 10px 0 3px;
+}
+.time span{
+    align-items: center;
+    font-size: 14px;
+    line-height: 20px;
+    color: #a0a4a8
+}
+.ke {
+    margin: 20px 0 0;
+    background: #f1f5f9 ;
+    padding: 5px 15px 5px 5px;
+    border-radius: 20px;
+    min-height: 40px;
+}
+.content-top{
+    margin: 32px 0px 0 0;
+    font-size: 18px;
+    line-height: 30px;
+    color: #333;
+    font-style: italic;
+    font-weight: 400;
+}
+.content-mid{
+    margin: 32px 0;
+    line-height: 30px;
+}
+.right-goi-y{
+    border-top:solid 2px black ;
+    margin-left:60px ;
+}
+.right-goi-y h2{
+    font-size: 16px;
+    margin: 30px 0;
+    font-weight: 600;
+}
+.goi-y{
+    width: 100%;
+}
+.goi-y ol li{
+    list-style-type: none;
+}
+.noi-bat a img{
+    width: 100%;
+}
+.so{
+    color: #a0a4a8;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    float: left;
+}
+
+.so span{
+    font-weight: bold;
+}
