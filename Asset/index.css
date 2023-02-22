@@ -1,9 +1,11 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+@import url(/Asset/#333/index.css);
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+/*header*/
 #header{
     width: 100%;
     padding-top: 12px;
@@ -25,7 +27,7 @@
 .logo{
     margin: 10px;
 }
-.tin-moi{
+.news{
     text-decoration: none;
     color: black;
     flex-direction: row;
@@ -34,20 +36,20 @@
     border: 1px solid #ccc;
     border-radius: 123px;
     margin-right: 8px;
-    line-height: 30px;
+    /* line-height: 30px; */
     margin: 10px 5px;
 }
 a{
     color: black;
 }
-.thong-tin img{
+.information img{
     margin: 0 8px 0 0;
     border-radius: 50%;
     overflow: hidden;
     width: 26px;
     height: 26px;
 }
-.thoi-tiet{
+.weather{
  margin: 10px 5px;
 }
 .text-header{
@@ -56,7 +58,7 @@ a{
 .nhiet-do{
     padding-bottom: 50px;
 }
-.dang-nhap{
+.logintt{
     border-left:solid 1px #ccc ;
     margin: 20px 0;
     margin-left: 10px;
@@ -76,9 +78,10 @@ a{
 .bi{
     padding:0 10px;
 }
-.tim-kiem{
+.search{
 margin: 16px 0;
 }
+/*-- Menu --*/
 .menu{
     width: 100%;
     margin: 10px 0;;
@@ -92,13 +95,14 @@ margin: 16px 0;
     display: inline;
     margin-left: 3px;
     
-}
+}/*-- body --*/
 #body{
     margin: 20px 0;
 }
 .container-body{
     display: flex;
 }
+/*-- body left --*/
 .left-mxh{
     margin-right: 22px;
     width: 10%;
@@ -115,26 +119,26 @@ margin: 16px 0;
     top: 60px;
     width: 35px;
 }
-.binh-luan{
+.chat{
     margin-top: 16px;
     padding: 16px 0 0;
     border-top: 1px solid #eee;
-}
-.center-noi-dung{
+} /*-- content --*/
+.center-content{
     width: 60%;
 }
-.center-noi-dung ul li{
+.center-content ul li{
     list-style-type: none;
     font-size: 20px;
     opacity: 60%;
 }
-.Tieu-de{
+.Title{
     font-size: 35px;
 }
 .time {
     margin: 20px 0;
 }
-.time img{
+.time img{  
     width: 32px;
     height: auto;
 }
@@ -147,12 +151,16 @@ margin: 16px 0;
     line-height: 20px;
     color: #a0a4a8
 }
-.ke {
-    margin: 20px 0 0;
-    background: #f1f5f9 ;
-    padding: 5px 15px 5px 5px;
+.space {
+    /* margin: 20px 0 0; */
+    margin: 0 5px;
+    background: #f1f5f9;
+    padding: 5px 15px 5px 15px;
     border-radius: 20px;
     min-height: 40px;
+    font-weight: 500;
+    color: #666;
+    display: block;
 }
 .content-top{
     margin: 32px 0px 0 0;
@@ -170,27 +178,35 @@ margin: 16px 0;
 width: auto;
 height: auto;
 
-}
-.right-goi-y{
+}/*-- body right --*/
+.right-recommend{
     border-top:solid 2px black ;
     margin-left:60px ;
 }
-.right-goi-y h2{
+.right-recommend h2{
     font-size: 16px;
     margin: 30px 0;
     font-weight: 600;
 }
-.goi-y{
+.recommend{
     width: 100%;
 }
-.goi-y ol li{
+.recommend ol li{
     list-style-type: none;
     margin: 30px 0;
+    font-weight:bold
 }
-.noi-bat a img{
+.outstanding a img{
     width: 100%;
 }
-.noi-bat{
+a{
+    text-decoration: none;
+
+}
+a:hover{
+    text-decoration: none;
+}
+.outstanding{
     margin-bottom:20px;
 }
 .so{
@@ -209,7 +225,7 @@ height: auto;
 .title-noibat{
     font-size: 18px;
     margin-top: 10px;
-}
+} 
 .noidung-khac {
   width: 100%;
   display: flex;
@@ -220,15 +236,108 @@ height: auto;
     width: 90px;
     height: auto;
 }
-.tieu-de-goi-y{
+.suggested-title{
     font-size: 15px;
     width: 100%;
+
 }
-.Danh-gia{
+/*Evaluate*/
+.Evaluate{
     width:100%;
     margin: 10px auto;
 }
-.yeu-thich{
+.favourite{
     display: flex;
     width: 100%;
+    margin: 20px 0;
 }
+.present img{
+    width: 32px;
+    height: auto;
+    margin-right: 10px;
+}
+.like{
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 120px;
+    background-color: #eee;
+    padding: 0 12px 0 0 ;
+}
+.star{
+    margin-bottom: 20px;
+}
+.click-present{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 120px;
+    padding-right:10px ;
+    margin: 10px 10px;
+    border: none;
+    box-shadow: #e9e8e8 0px 0px 1px 1px;
+
+}
+p {
+    color: #888;
+    font-size: 13px;
+}
+/*-- see more --*/
+.Related-news{
+    border: solid 1px #eee;
+    padding: 20px 30px 0 30px;
+}
+.Related-title {
+margin-top: 20px;
+font-size: 20px;
+font-weight: bold;
+border-bottom: solid 1px #eee ;
+padding-bottom:10px ;
+}
+.outstanding{
+ 
+    display: flex;
+}
+.text-primary{
+    font-size: 16px;
+    line-height: 20px;
+    padding: 0 15px;
+    color: black !important;
+}
+.recommend-footer .outstanding img{
+    height: 90px;
+    width: auto;
+}
+.key-word{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+.space a{
+    font-weight: 500;
+    color: #666;
+}
+/*Comment*/
+.comment-head{width: 100%;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.comment-head-left{
+    margin: 10px 0;
+}
+.comment-head-left h4{
+    font-weight: 550;
+
+}
+.comment-right button {
+    border: none;
+    background-color: white;
+    margin: 0 5px;
+    cursor: pointer;
+    color: cadetblue;
+    padding: 0 10px;
+    }
+.comment-right button{}
