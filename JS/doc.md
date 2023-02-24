@@ -1,4 +1,4 @@
-#toLowerCase() 
+# toLowerCase() 
 là một phương thức của đối tượng chuỗi (String) trong JavaScript, được sử dụng để chuyển đổi tất cả các ký tự trong chuỗi sang chữ thường.
 
 Ví dụ, nếu bạn có một chuỗi "Hello World", bạn có thể sử dụng phương thức toLowerCase() để chuyển đổi nó thành "hello world". Ví dụ sau minh họa cách sử dụng phương thức này:
@@ -36,7 +36,7 @@ console.log(result); // kết quả: "ello"
 Trong ví dụ trên, phương thức slice(1) sẽ trả về chuỗi "ello", bắt đầu từ vị trí index 1 (ký tự "e") đến hết chuỗi.
 
 
-#join(" ")
+# join(" ")
 Trong JavaScript, join(" ") là một phương thức của mảng (Array) được sử dụng để chuyển đổi các phần tử trong mảng thành một chuỗi, với các phần tử được phân tách bằng một chuỗi phân tách được chỉ định.
 
 Phương thức join() nhận vào một tham số là chuỗi phân tách, và trả về một chuỗi mới chứa các phần tử của mảng được nối lại với nhau, với mỗi phần tử được phân tách bằng chuỗi phân tách được chỉ định. Nếu không cung cấp chuỗi phân tách, mặc định sẽ sử dụng dấu phẩy để phân tách các phần tử.
@@ -48,7 +48,7 @@ let result = arr.join(" ");
 console.log(result); // kết quả: "apple banana orange"
 Trong ví dụ trên, phương thức join(" ") sẽ trả về chuỗi "apple banana orange", trong đó các phần tử của mảng được nối lại với nhau bằng khoảng trắng.
 
-#pop() trong javascript
+# pop() trong javascript
 
 Trong JavaScript, pop() là một phương thức được sử dụng để loại bỏ phần tử cuối cùng của một mảng và trả về giá trị của phần tử đó.
 
@@ -71,7 +71,7 @@ console.log(lastFruit); // 'orange'
 
 Trong ví dụ này, pop() được sử dụng để loại bỏ phần tử cuối cùng ('orange') khỏi mảng fruits và trả về giá trị của phần tử đó. Kết quả hiển thị trong log là mảng fruits sau khi loại bỏ phần tử cuối cùng là ['apple', 'banana'], và giá trị được gán cho lastFruit là 'orange'.
 
-#push()
+# push()
 
 Trong JavaScript, push() là một phương thức được sử dụng để thêm một hoặc nhiều phần tử vào cuối của một mảng.
 
@@ -94,3 +94,36 @@ let newLength = fruits.push('orange', 'kiwi');
 console.log(fruits); // ['apple', 'banana', 'orange', 'kiwi']
 console.log(newLength); // 4
 Trong ví dụ này, push() được sử dụng để thêm hai phần tử ('orange' và 'kiwi') vào cuối mảng fruits. Kết quả hiển thị trong log là mảng fruits sau khi đã thêm phần tử là ['apple', 'banana', 'orange', 'kiwi'], và giá trị được gán cho newLength là 4, tương ứng với độ dài mới của mảng.
+ # function 
+ Trong JavaScript, một function (hàm) là một khối mã có thể được gọi và thực thi nhiều lần trong chương trình.
+
+Ví dụ về một hàm đơn giản trong JavaScript như sau:
+
+function sayHello() {
+  console.log("Xin chào, thế giới!");
+}
+Hàm này có tên là sayHello, và nó không nhận bất kỳ đối số nào. Nó chỉ đơn giản là ghi ra chuỗi "Xin chào, thế giới!" vào console khi được gọi.
+
+Các hàm trong JavaScript cũng có thể nhận đối số và trả về giá trị. Dưới đây là ví dụ về một hàm lấy hai số làm đối số, cộng chúng lại với nhau và trả về kết quả:
+
+
+function addNumbers(num1, num2) {
+  return num1 + num2;
+}
+Hàm này có tên là addNumbers và lấy hai tham số, num1 và num2. Nó trả về tổng của hai số này khi được gọi.
+
+Bạn có thể gọi một hàm trong JavaScript bằng cách sử dụng tên của nó theo sau là dấu ngoặc đơn, như sau:
+
+sayHello(); // ghi chuỗi "Xin chào, thế giới!" vào console
+
+var sum = addNumbers(5, 10); // sum sẽ là 15
+
+#  
+const
+ được sử dụng để khai báo 1 hằng số, và giá trị của nó không thay đổi trong suốt chương trình.
+
+let 
+khai báo biến chỉ có thể truy cập được trong block bao quanh nó được xác định bằng cặp
+
+var
+khai báo biến có thể truy cập ở phạm vi hàm số hoặc bên ngoài hàm số, toàn cục.
