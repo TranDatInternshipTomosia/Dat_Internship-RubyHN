@@ -1,0 +1,66 @@
+----- Khai báo biến trong ruby
+	- Biến lưu trữ là nơi lưu trữ giá trị hầu hết mọi loại bao gồm: number,boolean," ",[],{}
+		khai báo 1 obj {key => value}
+		       ví dụ hast { "name"=>"Dat",
+		       		     "age"=>"23",
+		       		     "gneder"=>"Male"		
+		       		   }  
+		       		   
+-----puts và print
+	- puts và print các lệnh dùng để in ra màn hình console
+  
+  
+  
+  
+  
+----- comment trong ruby
+  	- comment một dòng bắt đầu bằng phần mở rộng#.
+  	- comment nhiều dòng bắt đầu bằng=begin và kết thúc bằng=end
+  	
+  	
+----- Các phép toán số học trong Ruby
+	- Các toán tử số học Ruby phổ biến nhất là cộng (+), trừ (-), chia lấy phần số (/), nhân (*), lũy thừa (**) và chia lấy phần dư (%).
+	vidu: print 1+3
+		# Addition: output 4
+
+		print 1-2
+		# Subtraction: output -1
+
+		print 9/3
+		# Division: output 3
+
+		print 2*3
+		# Multiplication: output 6
+
+		print 2**3
+		# Exponentiation: output 8
+
+		print 16%9
+		# Modulo: output 7
+
+----- Truy cập các phương thức Ruby
+      tên biến . tên phương thức
+      var = "codecademy"
+
+		# điếm các tự trong chuỗi
+		print var.length # 10
+
+		# đảo ngược chuỗi
+		print var.reverse # ymedacedoc
+
+		# in hoa tất cả chữ trong chuỗi
+		print var.upcase # CODECADEMY
+	
+----- gắn biến vào chuỗi Ruby
+ age = 30 
+
+print "Xin chào, tên tôi là Cody, và tôi #{ age} tuổi"
+
+
+
+----- Nhập trong Ruby
+ 
+  print "Type your name and press Enter: "
+name = gets.chomp
+
+puts "My name is #{name}!
