@@ -62,5 +62,220 @@ print "Xin chào, tên tôi là Cody, và tôi #{ age} tuổi"
  
   print "Type your name and press Enter: "
 name = gets.chomp
+# String
+-- Empty string: "" là 1 chuỗi quan trọng
+-- Concatenation and interpolation
+	+ concatenation : nối chuỗi chuỗi1 + chuỗi2
+	+ interpolation : nội suy truyền giá trị của biến vào string bằng cách sử dụng ký hiệu # và dấu ngoặc nhọn " #{tênchuoi} "
+-- Single-quoted strings
+	+  raw strings : là dấu nháy đơn '' không thể sự dụng được phương pháp interpolation
+		       VD: '#{first_name} #{last_name}' Không nhận giá trị nào trong dấu #{}
+-- Printing như là 1 side effect sẽ in ra strig ra màn hình và return
+		       VD: puts "hello, world!"
+		       >> hello, world!
+			   puts("hello, world!")
+		       >> "hello, world!"
+	+ puts mỗi lần in ra màn hình là tự động xuống dòng
+	+ print ko tự động xuống dòng
+-- Attributes, booleans, and control flow
+    -Mọi thứ trong ruby, bao gồm cả String đều là object. Điều này sẽ nhận được nhiều thông tin
+     bằng cách sử dụng dấu chấm (.) để gọi những thuộc tính tiện ích
+	string(chuỗi) Attributes (thuộc tính)
+	1 .length : trả về độ dài của chuỗi
+	   Nếu là 1 mảng [] sẽ trả về số phần tử trong mảng
+		string = ["The","giới","này","là","của","Tao"]
+		puts string.length
+		>> 6
+		string = "Hello, world!"
+		puts string.length
+		>> 13
+	2 .upcase : chuyển đổi chuỗi sang dạng chữ in hóa
+		string = "Hello, world!"
+		puts string.upcas
+		>> HELLO, WORLD!
+	3 .downcase : chuyển đổi chuỗi sang dạng chữ thường
+		string = "Hello, WORLD!"
+ 		puts string.downcase
+                >> hello, world!
+	4 .capitalize: Chuyển đổi chữ các đầu tiên của chuỗi sang chữ in hoa
+		string = "hello, world!"
+		puts string.capitalize
+		>> Hello, world!
+	5 .reverse: Đảo ngược chuỗi
+		string = "Hello, world!"
+		puts string.reverse
+		>> !dlrow ,olleH
+	6 .strip: Xóa các khoảng trắng và ký tự xuống dòng ở đầu và cuối chuỗi
+		string = "  Hello, world!  "
+		puts string.strip
+		>> Hello, world!
 
+	7 .gsub: Sẽ thay thế tất cả các mẫu chuỗi tìm thấy trong chuỗi gốc bằng chuỗi mới
+		string = "Hello, world!"
+		puts string.gsub("o", "0")
+		>> Hell0, w0rld!
+	8 .include?: Kiểm tra xem chuỗi giống với giá trị trong .include? hay không
+		string = "Hello, world!"
+		puts string.include?("world")
+		>> true
+	9 .empty?: kiểm tra xem chuỗi có rỗng hay không.
+		string = ""
+		puts string.empty?
+   		>> true
+	10 .concat: Nỗi chuỗi vào cuỗi chuỗi hiện tại
+		string1 = "Hello, "
+		string2 = "world!"
+		puts string1.concat(string2)
+		>> Hello, world!
+	11 .slice: Trích xuất 1 phần tử trong chuỗi trong đoạn (giá trị 1,giá trị 2)
+		string = "Hello, world!"
+		puts string.slice(0,5)
+		>> Hello
+	12 .start_with?: Kiểm tra xem chuỗi có bắt đầu 1 chuỗi khác hay không
+		string = "Hello, world!"
+		puts string.start_with?("Hello")
+		>> true
+	13 .end_with?: Kiểm tra xem chuỗi có kết thúc bằng 1 chuỗi khác hay không
+		string = "Hello, world!"
+		puts string.end_with?("world!")
+		>> true
+	14 .chars: chuyển đổi chuỗi thành mảnh
+		string = "Hello, world"
+		puts string.char
+		>> ["H","e","l","l",","," ","w","o","r","l","d"]
+	15 ljust/rjust thêm khoảng trắng hoặc ký tự ở bên trái hay bên phải của 1 chuỗi
+		"Hello, world".ljust(10) >> "Hello, world          "
+		"Hello, world".ljust(10,<) >> "Hello, world<<<<<<<<<<"
+		"Hello, world".rjust(10,>) >> ">>>>>>>>>>Hello, world"
+	16 .chop: xóa ký tự ở cuối cùng mỗi chuỗi
+		"Hello, world".chop() >> "Hello worl"
+	17 .chomp: loại bỏ nhiều ký tự cuối cùng
+		"Sammy".chomp("my")    # "Sam"
+		"This string has a newline\n".chomp   # "This string has a newline
+		"Sammy".chomp     # "Sammy"
+	18 .sub: Thay thế từ muốn thay thế trong chuỗi nhưng chỉ thay đồi chữ đầu tiên nhìn thấy
+		balloon = "Sammy has a balloon. The balloon has a ribbon"
+		print balloon.sub("has","had")
+		>> Sammy had a balloon. The balloon has a ribbon
+	19 .delete: xóa các ký tự chuỗi được truyền vào
+		 str = "Hoang Thi Lien"
+ 		 str.delete('aeiouAEIOU') >>  Hng Th Ln # xóa các ký tự có a,e,i,o,u,A,E,I,O,U
+ 	20 .count: đếm các phần tử có trong chuỗi 
+ 		 str ="euuoaii"
+ 		 str.count("ui")>>4
+ 	21 .split: Tách 1 chuỗi dựa trên dầu phân tách mạc định là khoảng trắng
+ 		 str = "Tran Viet Dat"
+ 		 str.split >> ["Tran","Viet","Dat"]
+ 		 str = "Tran-Viet-Dat"
+ 		 str.split("-") >> ["Tran","Viet","Dat"]
+ 		 sentence = "June 27,June 26,June 25"
+		 words = sentence.split(/,/, 2)>>["June 27", "June 26,June 25"]
+ 	22 .prepend: thếm ký tự vào đầu mỗi chuỗi 
+ 		 str = "Viet Dat"
+ 		 str.prepend("Tran ")>> Tran Viet Dat
+ 	23 .swapcase: chuyển đồi chữ in thường thành in hoa và ngược lại
+ 		 str = "Tran Viet Dat"
+ 		 str.swapcase >> "tRAN vIET dAT"
+ 	24 .crypt: mã hóa 1 chuỗi với thuật toán mã hóa được chỉ định
+ 		 password = "secret"
+		 salt = "ab"
+ 		 encrypted_password = password.crypt(salt)>> encrypted_password #=> "abvVup4J4WTjg"
+	+ lấy vị trí của phần tử
+	string = "Hello, world!"
+	puts string[0]
+	>> H
+    - .length hữu ích trong việc so sánh
+    	+ lặp lại chuỗi 
+    	tb = "Chúc mừng! "
+	puts tb * 3
+
+
+-- collect - Trả về một mảng mới chứa kết quả của việc thực thi một khối lệnh trên từng phần tử của một mảng.
+		numbers = [1, 2, 3, 4, 5]
+		squared_numbers = numbers.collect { |num| num*num }
+		puts squared_numbers #=> [1, 4, 9, 16, 25]
+-- detect - Trả về phần tử đầu tiên trong mảng thoả mãn một điều kiện nào đó.
+		fruits = ["apple", "banana", "orange", "kiwi"]
+		first_fruit_starting_with_a = fruits.detect { |fruit| fruit.start_with?("a") }
+		puts first_fruit_starting_with_a #=> "apple"
+
+-- _with_index - Thực thi một khối lệnh trên từng phần tử của một mảng và truyền cả index vào khối lệnh.
+		fruits = ["apple", "banana", "orange", "kiwi"]
+		fruits.each_with_index { |fruit, index| puts "#{index}: #{fruit}" }
+entries - Chuyển đổi một hash thành một mảng.
+
+find - Tìm và trả về phần tử đầu tiên trong mảng thoả mãn một điều kiện nào đó.
+
+find_all - Trả về một mảng mới chứa các phần tử trong mảng ban đầu thoả mãn một điều kiện nào đó.
+
+grep - Trả về một mảng mới chứa tất cả các phần tử trong mảng ban đầu có chứa một chuỗi con nào đó.
+
+include? - Kiểm tra xem một phần tử có tồn tại trong một mảng hay không.
+
+map - Tạo ra một mảng mới chứa kết quả của việc thực thi một khối lệnh trên từng phần tử của một mảng.
+
+max - Trả về phần tử lớn nhất trong một mảng.
+
+member? - Kiểm tra xem một phần tử có tồn tại trong một mảng hay không.
+
+min - Trả về phần tử nhỏ nhất trong một mảng.
+
+reject - Trả về một mảng mới chứa các phần tử không thoả mãn một điều kiện nào đó.
+
+select - Trả về một mảng mới chứa các phần tử trong mảng ban đầu thoả mãn một điều kiện nào đó.
+
+sort - Sắp xếp một mảng theo thứ tự tăng dần.
+
+to_a - Chuyển đổi một đối tượng thành một mảng.
+
+
+# Toán tử
+-- Toán tử và && so sánh 2 điều kiện
+    cả 2 phải là true thì kết quả mới là true
+    true && true >> true
+    false && false >> false
+    false && true >> false
+    true && true >> false
+      VD : if 1+1==2 && 2*1==2
+            " kết quả bằng nhau "
+          else 
+            " kết quả không bằng nhau"
+ 	
+-- Toán tử hoặc || so sánh 2 điều kiện
+  1 trong 2 là true kết quả là true
+    true || false >> true
+    false || true >> true
+    true || true >> true
+    false || false >> false
+        VD : if 1+1==2 || 2*1==1
+            " có điều kiện đúng"
+          else 
+            " ko có điều kiện nào đúng"
+
+-- Toán tử phủ định ! đảo ngược kết quả
+    !true >> false
+    !false >> true
+        VD :  x = "foo"
+              if !(x.length == 0)
+                "x is not empty."
+              else
+                  "x is empty."
+              end 
+              >> "x is not empty."
+  
+-- Toán tử khác != điều kiện 1 khác điều kiện 2
+    true != true >> false
+    true != false >> true
+    false != false >> false    
+        VD: fruits = ["apple", "banana", "orange"]
+            if fruits.include?("grape") != true
+              puts "Grape không có trong danh sácht"
+            else
+              puts "có trong danh sách"
+            end
+-- Toán tử phủ định !! trả về kết quả đúng của nó>> 
+
+      !!nil >> false
 puts "My name is #{name}!
+
+----- tìm hiều về câu lệnh if else
