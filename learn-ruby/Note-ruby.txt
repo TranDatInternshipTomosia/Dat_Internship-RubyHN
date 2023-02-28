@@ -189,44 +189,42 @@ name = gets.chomp
     	tb = "Chúc mừng! "
 	puts tb * 3
 
-
--- collect - Trả về một mảng mới chứa kết quả của việc thực thi một khối lệnh trên từng phần tử của một mảng.
+	25 .collect - Trả về một mảng mới chứa kết quả của việc thực thi một khối lệnh trên từng phần tử của một mảng.
 		numbers = [1, 2, 3, 4, 5]
 		squared_numbers = numbers.collect { |num| num*num }
 		puts squared_numbers #=> [1, 4, 9, 16, 25]
--- detect - Trả về phần tử đầu tiên trong mảng thoả mãn một điều kiện nào đó.
+	26 .detect - Trả về phần tử đầu tiên trong mảng thoả mãn một điều kiện nào đó.
 		fruits = ["apple", "banana", "orange", "kiwi"]
 		first_fruit_starting_with_a = fruits.detect { |fruit| fruit.start_with?("a") }
 		puts first_fruit_starting_with_a #=> "apple"
 
--- _with_index - Thực thi một khối lệnh trên từng phần tử của một mảng và truyền cả index vào khối lệnh.
+	27 _with_index - Thực thi một khối lệnh trên từng phần tử của một mảng và truyền cả index vào khối lệnh.
 		fruits = ["apple", "banana", "orange", "kiwi"]
 		fruits.each_with_index { |fruit, index| puts "#{index}: #{fruit}" }
-entries - Chuyển đổi một hash thành một mảng.
+	28 .entries - Chuyển đổi một hash thành một mảng.
 
-find - Tìm và trả về phần tử đầu tiên trong mảng thoả mãn một điều kiện nào đó.
+	29.find - Tìm và trả về phần tử đầu tiên trong mảng thoả mãn một điều kiện nào đó.
 
-find_all - Trả về một mảng mới chứa các phần tử trong mảng ban đầu thoả mãn một điều kiện nào đó.
+	30 .find_all - Trả về một mảng mới chứa các phần tử trong mảng ban đầu thoả mãn một điều kiện nào đó.
 
-grep - Trả về một mảng mới chứa tất cả các phần tử trong mảng ban đầu có chứa một chuỗi con nào đó.
+	31 .grep - Trả về một mảng mới chứa tất cả các phần tử trong mảng ban đầu có chứa một chuỗi con nào đó.
 
-include? - Kiểm tra xem một phần tử có tồn tại trong một mảng hay không.
 
-map - Tạo ra một mảng mới chứa kết quả của việc thực thi một khối lệnh trên từng phần tử của một mảng.
+	32 .map - Tạo ra một mảng mới chứa kết quả của việc thực thi một khối lệnh trên từng phần tử của một mảng.
 
-max - Trả về phần tử lớn nhất trong một mảng.
+	33 .max - Trả về phần tử lớn nhất trong một mảng.
 
-member? - Kiểm tra xem một phần tử có tồn tại trong một mảng hay không.
+	34 .member? - Kiểm tra xem một phần tử có tồn tại trong một mảng hay không.
 
-min - Trả về phần tử nhỏ nhất trong một mảng.
+	35 .min - Trả về phần tử nhỏ nhất trong một mảng.
 
-reject - Trả về một mảng mới chứa các phần tử không thoả mãn một điều kiện nào đó.
+	36 .reject - Trả về một mảng mới chứa các phần tử không thoả mãn một điều kiện nào đó.
 
-select - Trả về một mảng mới chứa các phần tử trong mảng ban đầu thoả mãn một điều kiện nào đó.
+	37 .select - Trả về một mảng mới chứa các phần tử trong mảng ban đầu thoả mãn một điều kiện nào đó.
 
-sort - Sắp xếp một mảng theo thứ tự tăng dần.
+	38 .sort - Sắp xếp một mảng theo thứ tự tăng dần.
 
-to_a - Chuyển đổi một đối tượng thành một mảng.
+	39 .to_a - Chuyển đổi một đối tượng thành một mảng.
 
 
 # Toán tử
@@ -278,4 +276,15 @@ to_a - Chuyển đổi một đối tượng thành một mảng.
       !!nil >> false
 puts "My name is #{name}!
 
------ tìm hiều về câu lệnh if else
+----- Symbol
+- symbol là 1 đối tượng thuộc Symbol class. mỗi đối tượng symbol là duy nhất và được định danh của 1 resource. có thể là
+	* một method
+	* một variablbe
+	* một hasd key
+	* một trạng thái
+
+
+
+
+
+

@@ -316,3 +316,7 @@ def check_na(str)
 end
 puts check_na("asdsakdE")
 puts check_na("sadasd22ue")
+
+
+a = "123Tran456" 
+puts a.strip("123","456")
