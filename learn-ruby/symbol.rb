@@ -30,7 +30,7 @@
 # arr[2]="7"
 # puts arr
 
-# khai bao hash
+# # khai bao hash
 # hash = {first_name:"Dat"}
 # hash.clear
 # # them key va value
@@ -72,26 +72,21 @@
   
   
   
-  #do #|key,value|
-#     if !arr[value]
-#         arr[value]
-#     end
-#     return arr[value]<<key
-#   end
+#   #  do #|key,value|
+#   #    if !arr[value]
+#   #        arr[value]     end
+#   #   return arr[value]<<key
+#   #  end
 
-# files = {
-#   'Input.txt' => 'Randy',
+#  files = {
+#    'Input.txt' => 'Randy',
 #   'Code.py' => 'Stan',
-#   'Output.txt' => 'Randy'
+#  'Output.txt' => 'Randy'
 # }
 # puts group_by_owners(files)
-# # arr =[1,2,3,4,5,6,6,7,8]
-# # sum=0;
-# # for i in 0..arr.length-1 do
+# arr =[1,2,3,4,5,6,6,7,8]
+# puts arr.sum/arr.length
 
-# #  sum+=arr[i];
-# # end
-# # puts sum/arr.length
 
 # arr =[0,1,2,3,4,5,6,7,8,9,10]
 # arr.each do |x| 
@@ -142,7 +137,7 @@
 # puts "aaaaa",e.next # => [2, [6, 7, 8]]
 # puts "aaaaa",e.next # => [3, [9, 10]]
 
-# Get sorted words from a web page.
+# # Get sorted words from a web page.
 # url = './Note-ruby.txt'
 # words = URI::open(url).readlines
 # # Make chunks, one for each letter.
@@ -159,10 +154,15 @@
 # }
 
 
-module MathUtils
-  def self.average(a, b)
-    return a + b / 2.to_f
-  end
-end
+# module MathUtils
+#   def self.average(a, b)
+#     return a + b / 2.to_f
+#   end
+# end
 
-puts MathUtils.average(2, 1)
+# puts MathUtils.average(2, 1)
+array = [2, 3, 4, 5, 6]
+
+array.each_with_index do |number, index|
+  puts "Element #{index} is #{number}"
+end

@@ -307,16 +307,124 @@
 # puts check_number("sadasd22")
 
 
-def check_na(str)
+# def check_na(str)
 
-  str.each_char do |char| 
-    return char if ['e','u','o','a','i'].include? char.downcase
+#   str.each_char do |char| 
+#     return char if ['e','u','o','a','i'].include? char.downcase
+#   end
+#   return "ko co nguyen am nao"
+# end
+# puts check_na("asdsakdE")
+# puts check_na("sadasd22ue")
+
+
+# a = "123Tran456" 
+# puts a.strip("123","456")
+
+
+
+# param [Integer] a 
+# param [Integer] b 
+# param [Integer] c 
+#
+# @return [Array[Float]] 
+#   An array of two elements containing both roots in any order
+# def find_roots(a, b, c)
+#   delta =( b*b)-(4*a*c)
+#   if delta<0
+#     return "Phuong tring vo ngiem"
+#   elsif delta ==0
+
+#     return -b/2*a
+#   elsif delta > 0
+#     x1 = -b/2*a-Math.sqrt(delta)
+#     x2 = -b/2*a+Math.sqrt(delta)
+#     return [Array[x1,x2]]
+#   end
+# end
+# puts find_roots(2, 10, 8)
+
+# def unique_names(names1, names2)
+#   return names1|names2
+# end
+
+# names1 = ["Ava", "Emma", "Olivia"]
+# names2 = ["Olivia", "Sophia", "Emma"]
+# puts(unique_names(names1, names2)) # should print Ava, Emma, Olivia, Sophia
+
+# def pipeline(*funcs)
+#   -> (arg) {
+#      funcs.reduce(arg) { |result, func| func.call(result) }
+#   }
+# end
+
+# fun = pipeline(-> (x) { x * 3 }, -> (x) { x + 1 }, -> (x) { x / 2 })
+# puts (fun.call(3)) # should print 5
+
+# x = 0
+# 3.times do
+#   x += 1
+# end
+
+# puts x
+# y = 0
+# 3.times do
+#   y += 1
+#   x = y
+# end
+
+# puts x
+# class Greeter
+
+#   def initialize(name = "World")
+#     @name = name
+#     end
+#     def say_hi
+#       puts "Hi #{@name}!"
+#     end
+#     def say_bye
+#       puts "Bye #{@name}, come back soon."
+#       end
+# end
+# puts greeter = Greeter.new("Pat")
+# puts greeter.say_hi
+#  puts greeter.say_bye
+# # greeter.@name
+
+# puts Greeter.instance_methods
+
+
+# # @param [Array<Hash>] students
+# #   Array of student records (array of hashes)
+# # @param [Array<Lambda>] filters
+# #   Zero or more filters to apply - each filter is a lambda returning a boolean
+# #
+# # @return [Array<Hash>]
+# #   An array of students who pass ALL provided filters
+# def filter(students, *filters)
+#   # Write your code here
+#     students.select do |student|
+#     filters.all? { |filter| filter.call(student) }
+#   end
+# end
+
+# students = [
+#   { name: 'Thomas Edison', gpa: 3.45 },
+#   { name: 'Grace Hopper', gpa: 3.99 },
+#   { name: 'Leonardo DaVinci', gpa: 2.78 }
+# ]
+
+# honor_roll = ->(record) { record[:gpa] > 3.0 }
+
+# honor_roll_members = filter(students, honor_roll)
+# puts honor_roll_members # it should print
+# # {:name=>"Thomas Edison", :gpa=>3.45} 
+# {:name=>"Grace Hopper", :gpa=>3.99}
+class Student
+  def info
+      @name = "I'm Ruby"
   end
-  return "ko co nguyen am nao"
 end
-puts check_na("asdsakdE")
-puts check_na("sadasd22ue")
-
-
-a = "123Tran456" 
-puts a.strip("123","456")
+st=Student.new
+puts st.methods.grep /info/
+puts st.instance_variables

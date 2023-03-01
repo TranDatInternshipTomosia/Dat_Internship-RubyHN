@@ -274,7 +274,6 @@ name = gets.chomp
 -- Toán tử phủ định !! trả về kết quả đúng của nó>> 
 
       !!nil >> false
-puts "My name is #{name}!
 
 ----- Symbol
 - symbol là 1 đối tượng thuộc Symbol class. mỗi đối tượng symbol là duy nhất và được định danh của 1 resource. có thể là
@@ -282,7 +281,9 @@ puts "My name is #{name}!
 	* một variablbe
 	* một hasd key
 	* một trạng thái
-
+- mỗi 1 symbol sẽ chỉ được tạo ra  lần duy nhất và là chuỗi bất biến
+	* nếu nội dung văn bản của đối tượng là quan trọng lên dùng string
+	* nếu danh tính của đối tượng quan trọng lên dùng symbol 
 
 
 
