@@ -1,0 +1,33 @@
+toLowerCase() là một phương thức của đối tượng chuỗi (String) trong JavaScript, được sử dụng để chuyển đổi tất cả các ký tự trong chuỗi sang chữ thường.
+
+Ví dụ, nếu bạn có một chuỗi "Hello World", bạn có thể sử dụng phương thức toLowerCase() để chuyển đổi nó thành "hello world". Ví dụ sau minh họa cách sử dụng phương thức này:
+
+let str = "Hello World";
+let lowerCaseStr = str.toLowerCase();
+console.log(lowerCaseStr); // kết quả: "hello world"
+
+Lưu ý rằng phương thức toLowerCase() chỉ chuyển đổi các ký tự từ chữ hoa sang chữ thường và không ảnh hưởng đến các ký tự khác như số, ký tự đặc biệt hoặc khoảng trắng.
+
+Phương thức toLowerCase() trong JavaScript sẽ chuyển đổi tất cả các ký tự trong chuỗi sang chữ thường, trong khi phương thức split() sẽ tách một chuỗi thành một mảng các phần tử dựa trên một chuỗi phân tách được chỉ định.
+
+Khi kết hợp cả hai phương thức, toLowerCase().split(" ") sẽ chuyển đổi tất cả các ký tự trong chuỗi thành chữ thường, sau đó tách chuỗi thành một mảng các phần tử dựa trên khoảng trắng. Điều này rất hữu ích khi bạn muốn tách một câu hoặc một đoạn văn thành các từ riêng biệt để xử lý dữ liệu.
+
+Ví dụ, nếu bạn có một chuỗi "Hello World, How are you?", bạn có thể sử dụng phương thức toLowerCase().split(" ") để chuyển đổi tất cả các ký tự trong chuỗi sang chữ thường và sau đó tách chuỗi thành các từ riêng biệt:
+
+
+let str = "Hello World, How are you?";
+let lowerCaseArray = str.toLowerCase().split(" ");
+console.log(lowerCaseArray); // kết quả: ["hello", "world,", "how", "are", "you?"]
+
+Trong JavaScript, slice(1) là một phương thức của đối tượng chuỗi (String) được sử dụng để trích xuất một phần của chuỗi từ vị trí index 1 đến hết chuỗi.
+
+Phương thức slice() nhận vào hai tham số, tham số đầu tiên là vị trí bắt đầu của phần chuỗi muốn trích xuất, và tham số thứ hai (không bắt buộc) là vị trí kết thúc của phần chuỗi muốn trích xuất. Nếu tham số thứ hai không được cung cấp, phương thức sẽ trả về một phần của chuỗi bắt đầu từ vị trí được chỉ định đến hết chuỗi.
+
+Khi sử dụng slice(1) trên một chuỗi, phương thức sẽ trích xuất phần của chuỗi từ vị trí index 1 đến hết chuỗi. Ví dụ:
+
+let str = "Hello";
+let result = str.slice(1);
+console.log(result); // kết quả: "ello"
+
+
+

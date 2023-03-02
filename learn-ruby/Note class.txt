@@ -1,0 +1,10 @@
+-----Class-----
+	* instance method là 1 phương thức được định nghĩa cho 1 đối tượng cụ thể(instance) của
+		1 lớp (class). Nó cho phép đối tượng đó hành động củ thể và trả về kết quả
+	* Class method là 1 phương thức được định nghĩa cho 1 lớp(Class) thay vì cho 1
+	  đối tượng cụ thể (instance) của lớp đó, Nó cho phép ta thực hiện một hành động cụ thể 
+	  liên quan đến lớp đó mà ko cần tạo ra 1 đối tượng mới
+	  Kế thừa: trong lập trình ruby là 1 khái niệm quan trọng để xây dựng các lớp (class)mới
+	  dựa trên các lớp đã có. lớp (superclass) chứa các phương thức va thuộc tính, và lớp con 
+	  kế thừa các phương thức và thuộc tính đó
+		
