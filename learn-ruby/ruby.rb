@@ -14,24 +14,22 @@
 # puts $f2.object_id   #=> 2514190
 # puts $f3.object_id   #=> 2514190
 
-
 # foo = 42
 
-# puts defined? unpack  
-# puts defined? puts(bar)   # => nil (bar is not defined here)_    
+# puts defined? unpack
+# puts defined? puts(bar)   # => nil (bar is not defined here)_
 # puts defined? puts        # => "method"
 # print "Enter a number: "
- 
+
 # num = gets.to_i
- 
+
 # if num < 0
 #     puts "#{num} is negative"
-# elsif num == 0 
+# elsif num == 0
 #     puts "#{num} is zero"
 # elsif num > 0
 #    puts "#{num} is positive"
 # end
-
 
 # $debug = 1
 # print "debug\n" if $debug
@@ -40,13 +38,12 @@
 # print "1 -- Value is set\n" if $var
 # print "2 -- Value is set\n" unless $var
 
-# $var = false 
+# $var = false
 # print "3 -- Value is set\n" unless $var
 
 # if $var == false
 #   puts "2 so bang nhau #{$debug} #{$var}"
 # end
-
 
 # puts "Sammy".chomp("my")    # "Sam"
 # puts "This string has a newline\n".chomp   # "This string has a newline
@@ -90,7 +87,7 @@
 #     @say_new = "new"
 #     p instance_variables
 #   end
-  
+
 #   def say_some_thing_2 # instance method khác để kiểm tra biến @say
 #     puts self.class.say
 #     p instance_variables
@@ -115,20 +112,17 @@
 #  str ="euuoaii"
 #  	puts	 str.count("ui")
 #    str = "Anna"
-#    str.reverse 
-   
+#    str.reverse
+
 #    puts "palindrome" if str.downcase == str.downcase.reverse
 
 #   sentence = "June 27,June 26,June 25,June 24,June 23"
 #    puts words = sentence.split(/,/,4)# /,/ lay da
 
-
 # puts"#{$name}";
 # Person.new.index
 # Person.new.index2
 # puts"#{$name}";
-
-
 
 # class AA
 #   @say = "AA"
@@ -149,7 +143,7 @@
 #     @say_new = "new"
 #     p instance_variables
 #   end
-  
+
 #   def say_some_thing_2 # instance method khác để kiểm tra biến @say
 #     puts self.class.say
 #     p instance_variables
@@ -174,22 +168,21 @@
 #  str ="euuoaii"
 #  	puts	 str.count("ui")
 #    str = "Anna"
-#    str.reverse 
-   
+#    str.reverse
+
 #    puts "palindrome" if str.downcase == str.downcase.reverse
 
 #   sentence = "June 27,June 26,June 25,June 24,June 23"
 #    puts words = sentence.split(/,/,4)# /,/ lay dau phay dau tien va chia 4 phan tu
 
-#    a = "hello" 
-# p a.insert(a.length-1, " world") 
+#    a = "hello"
+# p a.insert(a.length-1, " world")
 # p a.class
-
 
 # def hello
 #   puts "Hello"
 # end
- 
+
 # hello { puts "Code truyền vào method" }
 
 # def hello
@@ -197,7 +190,7 @@
 #   yield
 #   puts "Goodbye"
 # end
- 
+
 # hello { puts "Code truyền vào method" }
 
 # def hello
@@ -205,7 +198,7 @@
 #   return yield(['Phú','dat','Trab'], [22,23,24]) if block_given?
 #   puts "Goodbye"
 # end
- 
+
 # hello do |name, age|
 
 # for i in 0..name.length-1 do
@@ -216,12 +209,11 @@
 # end
 # end
 
-
 # def hello1
 #   value = yield
 #   puts "Kết quả của yield là #{value}"
 # end
- 
+
 # hello1 do
 #   1 + 1
 # end
@@ -230,7 +222,7 @@
 #   puts khoa
 #   khoa.call
 # end
- 
+
 # hello2 do
 #   puts "#{1+1}"
 # end
@@ -265,15 +257,12 @@
 # encrypted_password = password.crypt(salt)
 # puts encrypted_password #=> "abvVup4J4WTjg"
 
-
-
 # # puts "hello".each_byte {|c| print c, ' ' }
-
 
 # str ="hoc ruby co ban";
 
 # if  str.count("o")>=2
-#   puts str 
+#   puts str
 # else
 #   puts "no"
 # end
@@ -281,7 +270,7 @@
 #   puts "oke"
 # else
 #   puts "no"
-  
+
 # end
 
 # def unique_char(str)
@@ -306,10 +295,9 @@
 # puts check_number("asdsakd")
 # puts check_number("sadasd22")
 
-
 # def check_na(str)
 
-#   str.each_char do |char| 
+#   str.each_char do |char|
 #     return char if ['e','u','o','a','i'].include? char.downcase
 #   end
 #   return "ko co nguyen am nao"
@@ -317,17 +305,14 @@
 # puts check_na("asdsakdE")
 # puts check_na("sadasd22ue")
 
-
-# a = "123Tran456" 
+# a = "123Tran456"
 # puts a.strip("123","456")
 
-
-
-# param [Integer] a 
-# param [Integer] b 
-# param [Integer] c 
+# param [Integer] a
+# param [Integer] b
+# param [Integer] c
 #
-# @return [Array[Float]] 
+# @return [Array[Float]]
 #   An array of two elements containing both roots in any order
 # def find_roots(a, b, c)
 #   delta =( b*b)-(4*a*c)
@@ -393,7 +378,6 @@
 
 # puts Greeter.instance_methods
 
-
 # # @param [Array<Hash>] students
 # #   Array of student records (array of hashes)
 # # @param [Array<Lambda>] filters
@@ -418,13 +402,14 @@
 
 # honor_roll_members = filter(students, honor_roll)
 # puts honor_roll_members # it should print
-# # {:name=>"Thomas Edison", :gpa=>3.45} 
+# # {:name=>"Thomas Edison", :gpa=>3.45}
 # {:name=>"Grace Hopper", :gpa=>3.99}
 class Student
   def info
-      @name = "I'm Ruby"
+    @name = "I'm Ruby"
   end
 end
-st=Student.new
+
+st = Student.new
 puts st.methods.grep /info/
 puts st.instance_variables
