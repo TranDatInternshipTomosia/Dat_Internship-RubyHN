@@ -1,4 +1,7 @@
------ Khai báo biến trong ruby
+Tran Viet Dat
+Tran
+Viet
+Datg ruby
 	- Biến lưu trữ là nơi lưu trữ giá trị hầu hết mọi loại bao gồm: number,boolean," ",[],{}
 		khai báo 1 obj {key => value}
 		       ví dụ hast { "name"=>"Dat",

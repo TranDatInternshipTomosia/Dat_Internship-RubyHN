@@ -1,0 +1,13 @@
+- StandaerError: Lớp này đại diện cho các exception thường gặp trong code như là ArgumentError,
+								 NameError, NoMethodError, RuntimeError và 1 số ngoại lệ khác
+		+ NoMethodError : là lỗi khi cố gắng gọi 1 phương thức hoặc sai tên phương thức trên 1 đối 
+											tương không sử dụng được phương thức đó
+		+ ArgumentError : là lỗi khi truyền vào hàm tham số không hợp lệ
+		+ NameError     : là lỗi được sử dụng khi 1 biến không tồn tại hay đc khai báo trước đó
+		+ RuntimeError  : là lỗi xảy ra trong quá trình thực hiện chương trình
+		
+- SystemExit và SignalException: Đại diện cho các lỗi phát sinh ở hệ thống hoặc tín hiệu từ bên
+																ngoài như Interrupt hoặc SIGTERM
+		+ SystemExit: Được sử dụng để thoát khỏi chương trình
+		+ Interrupt : Được sử dụng bắt tín hiệu từ bàn phím người dùng	
+		

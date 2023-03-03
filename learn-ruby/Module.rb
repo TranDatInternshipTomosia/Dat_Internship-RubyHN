@@ -59,60 +59,60 @@ end
 
 Sample::Hello.new
 
-module TextContent
-  extend ActiveSupport::Concern
+# module TextContent
+#   extend ActiveSupport::Concern
 
-  def word_count
-    body.split.count
-  end
+#   def word_count
+#     body.split.count
+#   end
 
-  module ClassMethods
-    def total_word_count
-      all.inject(0) { |total, a| total += a.word_count }
-    end
-  end
+#   module ClassMethods
+#     def total_word_count
+#       all.inject(0) { |total, a| total += a.word_count }
+#     end
+#   end
 
-  included do
-    has_one :moderator_approval, as: :content
-  end
-end
+#   included do
+#     has_one :moderator_approval, as: :content
+#   end
+# end
 
-class Article < ActiveRecord::Base
-  include TextContent
-end
+# class Article < ActiveRecord::Base
+#   include TextContent
+# end
 
-class Comment < ActiveRecord::Base
-  include TextContent
-end
+# class Comment < ActiveRecord::Base
+#   include TextContent
+# end
 
-class User
-  attr_accessor :username, :password, :email, :address
-  attr_accessor :payment_processor_token, :subsription_plan_id
+# class User
+#   attr_accessor :username, :password, :email, :address
+#   attr_accessor :payment_processor_token, :subsription_plan_id
 
-  def authenticate!(password)
-  end
+#   def authenticate!(password)
+#   end
 
-  def charge_cc
-  end
+#   def charge_cc
+#   end
 
-  def export_vcard
-  end
-end
+#   def export_vcard
+#   end
+# end
 
-module Authentication
-  def self.authenticate!(user)
-  end
-end
+# module Authentication
+#   def self.authenticate!(user)
+#   end
+# end
 
-module Subscription
-  def self.charge(user)
-  end
-end
+# module Subscription
+#   def self.charge(user)
+#   end
+# end
 
-module Contact
-  def self.export_vcard(user)
-  end
-end
+# module Contact
+#   def self.export_vcard(user)
+#   end
+# end
 
 class Interpreter
   def do_a() print "there, "; end
@@ -134,3 +134,64 @@ end
 
 interpreter = Interpreter.new
 interpreter.interpret("daev")
+
+class Cat
+  attr_accessor :name, :age
+  include Comparable
+
+  def initialize(n, a)
+    self.name = n
+    self.age = a
+  end
+
+  def <=>(other)
+    self.age <=> other.age
+  end
+end
+
+puts Cat.new("Bob", 3)
+puts Cat.new("Lucy", 7)
+
+cong = Proc.new do |a, b|
+  a + b
+end
+tru = Proc.new do |a, b|
+  a - b
+end
+nhan = Proc.new do |a, b|
+  a * b
+end
+chia = Proc.new do |a, b|
+  a / b
+end
+
+def ctnc(name, a, b)
+  puts "#{name.call(a, b)}"
+end
+
+puts ctnc(cong, 5, 4)
+
+talk = ->(a, b) do
+  puts "Hello #{a + b}"
+end
+talk.call
+
+module Animal
+  class Cat
+    def speak
+      print "Gau Gau"
+    end
+  end
+
+  class Dog
+    def speak
+      print "Mew Mew"
+    end
+  end
+end
+
+dog = Animal::Cat.new
+meo = Animal::Dog.new
+
+p dog.speak
+p meo.speak

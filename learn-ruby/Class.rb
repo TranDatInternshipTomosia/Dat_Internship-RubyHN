@@ -104,3 +104,45 @@ h = { foo: 0, bar: 1, baz: 2 }
 h.merge # => {:foo=>0, :bar=>1, :baz=>2}
 h1 = h.merge! { |key, old_value, new_value| raise "Cannot happen" }
 h1 # => {:foo=>0, :bar=>1, :baz=>2}
+
+my_object = Object.new
+def my_object.set_value(var)
+  @intance_variable = var
+end
+def my_object.get_value
+  @intance_variable
+end
+
+my_object.set_value("Hello, world!")
+puts my_object.get_value # => "Hello, world!"
+
+MyClass = Class.new
+def MyClass.viet_in_hoa
+  name.upcase
+end
+
+puts MyClass.viet_in_hoa
+
+class CarModel
+  FEATURES = ["engine", "wheel", "airbag", "alarm", "stereo"]
+  FEATURES.each do |feature|
+    define_method("#{feature}_info") do |info|
+      instance_variable_set("@#{feature}_info", info)
+    end
+    define_method("#{feature}_info") do
+      instance_variable_get("@#{feature}_info")
+    end
+    define_method("#{feature}_price") do |price|
+      instance_variable_set("@#{feature}_price", price)
+    end
+    define_method("#{feature}_price") do
+      instance_variable_set("@#{feature}_price")
+    end
+  end
+end
+
+def self.heo
+  helu = "Be heo cute"
+  puts helu
+end
+self.heo
