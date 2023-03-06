@@ -289,6 +289,7 @@ name = gets.chomp
 	* nếu danh tính của đối tượng quan trọng lên dùng symbol 
 
 
-
+https://ruby-doc.org/core-2.7.0/
+https://ruby-doc.org/3.2.1/
 
 

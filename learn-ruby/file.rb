@@ -119,9 +119,52 @@ puts File.ctime("file.rb") # hien thi thoi gian truy cap tep
 
 puts File.delete("tss.txt")
 f = File.new("tss.txt", "a")
+File.f
 puts File.directory?("ruby") # kiem tra xem thu muc(true) hay file(false)
 puts File.executable?("Module.rb") # kiem tra xem tep co kha dung hay ko
 puts File.file?("ruby.rb") #  kiem tra xem file co ton tai  hay ko
 
 puts File.fnmatch("*.rb", "ruby.rb", File::FNM_DOTMATCH) # Kiem tra 1 chuoi co khop voi 1 bieu thuc chinh quy hay khong
 puts File.ftype(".vscode") # xac dinh loai tep
+puts IO.popen({ "FOO" => "bar" }, "ruby", "r+") do |pipe|
+  pipe.puts "puts ENV['FOO']"
+  pipe.close_write
+  pipe.gets
+end
+
+puts IO.popen("uname") do |pipe|
+  pipe.readlines
+end
+puts IO.popen("/Dat_Internship-RubyHN/sh", "r+") do |pipe|
+  pipe.puts("ls")
+  pipe.close_write
+  $stderr.puts pipe.readlines.size
+end
+
+# Set IO encoding.
+IO.popen("nkf -e file.rb", :external_encoding => "EUC-JP") { |nkf_io|
+  euc_jp_string = nkf_io.read
+}
+
+# Merge standard output and standard error using Kernel#spawn option. See Kernel#spawn.
+IO.popen(["ls", "/", :err => [:child, :out]]) do |io|
+  ls_result_with_error = io.read
+end
+
+# Use mixture of spawn options and IO options.
+IO.popen(["ls", "/"], :err => [:child, :out]) do |io|
+  ls_result_with_error = io.read
+end
+
+f = IO.popen("uname")
+p f.readlines
+f.close
+puts "Parent is #{Process.pid}"
+IO.popen("date") { |f| puts f.gets }
+IO.popen("-") { |f| $stderr.puts "#{Process.pid} is here, f is #{f.inspect}" }
+p $?
+IO.popen(%w"sed -e s|^|<foo>| -e s&$&;zot;&", "r+") { |f|
+  f.puts "bar"; f.close_write; puts f.gets
+}
+puts IO.read("| cat Note-ruby.txt")
+# => "First line\nSecond line\n\nThird line\nFourth line\n
