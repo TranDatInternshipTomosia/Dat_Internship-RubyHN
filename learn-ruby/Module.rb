@@ -190,7 +190,7 @@ module Animal
   end
 end
 
-dog = Animal::Cat.new
+dog = Animal::Cat.new #module :: class goi class trong module
 meo = Animal::Dog.new
 
 p dog.speak
