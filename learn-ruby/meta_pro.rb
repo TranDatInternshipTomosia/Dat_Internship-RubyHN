@@ -147,7 +147,7 @@ class String
 end
 
 puts "ADOSAHDOsadklasd".upcase
-#4
+
 def giaithua(n)
   if n == 0
     return 1
@@ -157,9 +157,8 @@ def giaithua(n)
 end
 
 puts giaithua(4)
-#5
 require "prime"
-Prime.each(20) do |i|
+Prime.each(9) do |i|
   puts i
 end
 

@@ -286,7 +286,8 @@ end
 
 # Đọc tệp đầu vào và tạo một mảng chứa tất cả các trận đấu
 matches = []
-File.readlines("input.txt").each do |line|
+input = "Allegoric Alaskans;Blithering Badgers;win\nDevastating Donkeys;Courageous Californians;draw\nDevastating Donkeys;Allegoric Alaskans;win\nCourageous Californians;Blithering Badgers;loss\nBlithering Badgers;Devastating Donkeys;loss\nAllegoric Alaskans;Courageous Californians;win\nAllegoric Alaskans;Blithering Badgers;draw\nDevastating Donkeys;Courageous Californians;loss\nDevastating Donkeys;Allegoric Alaskans;loss\nCourageous Californians;Blithering Badgers;draw\nBlithering Badgers;Devastating Donkeys;win\nAllegoric Alaskans;Courageous Californians;win"
+input.each_line do |line|
   match = line.chomp.split(";")
   matches << { home_team: match[0], away_team: match[1], result: match[2] }
 end
@@ -384,3 +385,303 @@ class Bax < Bar
 end
 
 Bax.inherited
+
+class Point
+  attr_reader :x, :y
+
+  def initialize(x = 0, y = 0)
+    @x = x.to_i
+    @y = y.to_i
+  end
+
+  def ==(point)
+    @x == point.x && @y == point.y
+  end
+
+  def distance(point)
+    Math.hypot((@x - point.x), (@y - point.y))
+  end
+end
+
+class Traingle
+  attr_reader :a, :b, :c, :type
+
+  def initialize(a, b, c)
+    raise "Invalid data, a Traingle can only be initialized through points" unless [a, b, c].all? { |p| p.is_a?(Point) }
+  end
+
+  private
+
+  def calculate_ty
+    if a.distance(b) == b.distance(c) && b.distance(c) == c.distance(a)
+      puts "equilataral"
+    elsif a.distance(b) == b.distance(c) || b.distance(c) == c.distance(a) || c.distance(a) == a.distance(b)
+      puts "isosceles"
+    else
+      puts "scalene"
+    end
+  end
+end
+
+a = Point.new(0, 0)
+b = Point.new(1, 1)
+c = Point.new(2, 0)
+traingle = Traingle.new a, b, c
+puts traingle.type
+
+class Tournament
+  def self.tally(input)
+    self.new.tally(input)
+  end
+
+  def tally(input)
+    headers = ["Team", "MP", "W", "D", "L", "P"]
+    tally = {}
+
+    str = format(headers)
+    input.split("\n").map(&:strip).each do |row|
+      home, away, result = row.split ";"
+      tally[home] = { mp: 0, w: 0, d: 0, l: 0, p: 0 } if tally[home].nil?
+      tally[away] = { mp: 0, w: 0, d: 0, l: 0, p: 0 } if tally[away].nil?
+      tally[home][:mp] += 1
+      tally[away][:mp] += 1
+      case result
+      when "win"
+        tally[home][:w] += 1
+        tally[home][:p] += 3
+        tally[away][:l] += 1
+      when "draw"
+        tally[home][:d] += 1
+        tally[home][:p] += 1
+        tally[away][:d] += 1
+        tally[away][:p] += 1
+      else
+        tally[home][:l] += 1
+        tally[away][:w] += 1
+        tally[away][:p] += 3
+      end
+    end
+    tally.sort_by { |k, v| [-v[:p], k] }.each do |k, v|
+      arr = [k, v[:mp], v[:w], v[:d], v[:l], v[:p]]
+      str << format(arr)
+    end
+    str
+  end
+
+  def format(array)
+    sprintf "%-30s | %2s | %2s | %2s | %2s | %2s\n", *array
+  end
+end
+
+class Nanp
+  def initialize(std)
+    @std = std
+  end
+
+  def show
+    return @std.delete("+().-")
+  end
+end
+
+n = Nanp.new("613-995.0253")
+puts n.show
+
+class TwoFer
+  def self.two_fer(name = "you")
+    puts "One for #{name}, one for me."
+  end
+end
+
+TwoFer.two_fer
+
+def so_nt(n)
+  if n == 1
+    return n
+  end
+  (2..n).each do |i|
+    Math.sqrt(n).to_i
+    if n % i == 0
+      if n % 6 == 0 && n % 9 == 0 && n % 3 == 0
+        return "so nay chia het cho ca 3 so"
+      elsif n % 3 == 0
+        return "so nay chia het cho 3"
+      elsif n % 6 == 0
+        return "so nay chia het cho 6"
+      elsif n % 9 == 0
+        return "so nay chia het cho 9"
+      else
+        return "so nay khong la so nguyen to cung ko chia dc cho 3 6 9"
+      end
+    else
+      return "day la so nguyen to"
+    end
+  end
+end
+
+puts so_nt(9)
+
+def so_nt(n)
+  if n == 1
+    return n
+  end
+  (2..n).each do |i|
+    Math.sqrt(n).to_i
+    if n % i == 0
+      return "so nay khong la so nguyen to cung ko chia dc cho 3 6 9"
+    elsif n % 6 == 0 && n % 9 == 0 && n % 3 == 0
+      return "so nay chia het cho ca 3 so"
+    elsif n % 3 == 0
+      return "so nay chia het cho 3"
+    elsif n % 6 == 0
+      return "so nay chia het cho 6"
+    elsif n % 9 == 0
+      return "so nay chia het cho 9"
+    else
+      return "day la so nguyen to"
+    end
+  end
+end
+
+puts so_nt(23)
+
+class Attendee
+  def initialize(height)
+    @height = height
+  end
+
+  def issue_pass!(pass_id)
+    @pass_id = pass_id
+  end
+
+  def revoke_pass!
+    @pass_id = nil
+  end
+
+  def has_pass?
+    @pass_id != @height && @pass_id != nil
+  end
+
+  def fits_ride?(ride_minimum_height)
+    @height >= ride_minimum_height
+  end
+
+  def allowed_to_ride?(ride_minimum_height)
+    has_pass? && fits_ride?(ride_minimum_height)
+  end
+end
+
+p Attendee.new(100).allowed_to_ride?(100)
+
+attendee = Attendee.new(100)
+attendee.issue_pass!(1)
+p attendee.allowed_to_ride?(100)
+
+str = "Portable Network Graphics"
+p str.gsub(/[-,;]/, " ").split
+
+class Acronym
+  def self.abbreviate(name)
+    ga = name.gsub(/[-,;]/, " ").split
+    gop = ga.map { |i| i[0] }.join("")
+    return gop.upcase
+  end
+end
+
+p Acronym.abbreviate("Portable Network Graphics")
+
+class PhoneNumber
+  def self.clean(number)
+    number.delete!("-.+ ()")
+    ga = number.chars
+    ga0 = ga.slice(0..-2).select do |x|
+      x == "0"
+    end
+    ga00 = ga0.join
+    ga1 = ga.slice(0..-2).select do |x|
+      x == "1"
+    end
+    ga11 = ga1.join
+    if number[0] == "+"
+      parts = number.split(" ")
+      parts.shift
+      clean = parts.join("").delete("-.+ ()")
+      return clean
+    elsif number.length >= 10 && ga00 == "0"
+      return nil
+    elsif number[0] == "1" && number.length == 11
+      parts = number.split("")
+      parts.shift
+      clean = parts.join("").delete("-.+ ()")
+      return clean
+    elsif number.length == 9 || number.length > 10 || number.match(/[a-zA-Z]/) || number.match(/[\W]/) || number[0] == "0" || number[0] == "1" || number[0] == "2"
+      return nil
+    elsif number.length == 11 && ga11 != "1"
+      return nil
+    else
+      return number
+    end
+  end
+end
+
+p PhoneNumber.clean("(223) 156-7890")
+
+class PhoneNumber
+  def self.clean(number)
+    number.delete!("-.+ ()")
+    ga = number.chars
+    # ga0 = ga.slice(0..-2).select do |x|
+    #   x == "0"
+    # end
+    # ga00 = ga0.join
+    # if number.length >= 10 && ga00 == "0"
+    #   return nil
+    # else
+    #   return number
+    # end
+    return ga
+  end
+end
+
+p PhoneNumber.clean("(223) 156-7890")
+
+arr = ["2", "2", "3", "1", "5", "6", "7", "8", "9", "0"]
+
+zero_elements = arr.slice(0..-2).select { |x| x == "1" }
+
+p zero_elements.join == "1"
+
+class PhoneNumber
+  def self.clean(number)
+    number.delete!("-.+ ()")
+    ga = number.chars
+    ga0 = ga.slice(0..-2).select do |x|
+      x == "0"
+    end
+    ga00 = ga0.join
+    ga1 = ga.slice(0..-2).select do |x|
+      x == "1"
+    end
+    ga11 = ga1.join
+    if number[0] == "+"
+      parts = number.split(" ")
+      parts.shift
+      clean = parts.join("").delete("-.+ ()")
+      return clean
+    elsif number.length >= 10 && ga11 == "1"
+      return nil
+    elsif number.length >= 10 && ga00 == "0"
+      return nil
+    elsif number[0] == "1" && number.length == 11
+      parts = number.split("")
+      parts.shift
+      clean = parts.join("").delete("-.+ ()")
+      return clean
+    elsif number.length == 9 || number.length > 10 || number.match(/[a-zA-Z]/) || number.match(/[\W]/) || number[0] == "0" || number[0] == "1" || number =~ /^[2-9][0-9]{2}$/ && number[0] == "1"
+      return nil
+    else
+      return number
+    end
+  end
+end
+
+p PhoneNumber.clean("12234567890")

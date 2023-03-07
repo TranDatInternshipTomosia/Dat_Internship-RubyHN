@@ -172,3 +172,31 @@ puts tang
   p "Memo: #{memo}; element: #{element}"
   p element + memo
 end # => 10
+
+ary = [1, "two", 3, "four", 5, "six"]
+
+puts Array.new(3, "gA").to_s
+p Array.new(5) { |i| i.to_s }.shuffle
+p Array({ a: "a", b: "b", c: "c", d: "d" })
+puts "42A7".to_i
+x = (0..9)
+puts x
+x.select { |num| num.even? }
+
+str = "test code"
+str.slice(0, 4)
+puts str
+
+Ldsad = "dsadsd"
+
+#!/usr/bin/env ruby
+class Microwave
+  def on
+    puts "The microwave is on"
+  end
+
+  alias :start :on
+end
+
+m = Microwave.new
+m.start # same as m.on
