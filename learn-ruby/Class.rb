@@ -590,37 +590,15 @@ end
 p Acronym.abbreviate("Portable Network Graphics")
 
 class PhoneNumber
+  VALID_PHONE_NUMBER = /^([2-9]\d\d){2}\d{4}$/
   def self.clean(number)
-    number.delete!("-.+ ()")
-    ga = number.chars
-    ga0 = ga.slice(0..-2).select do |x|
-      x == "0"
-    end
-    ga00 = ga0.join
-    ga1 = ga.slice(0..-2).select do |x|
-      x == "1"
-    end
-    ga11 = ga1.join
-    if number[0] == "+"
-      parts = number.split(" ")
-      parts.shift
-      clean = parts.join("").delete("-.+ ()")
-      return clean
-    elsif number.length >= 10 && ga00 == "0"
-      return nil
-    elsif number[0] == "1" && number.length == 11
-      parts = number.split("")
-      parts.shift
-      clean = parts.join("").delete("-.+ ()")
-      return clean
-    elsif number.length == 9 || number.length > 10 || number.match(/[a-zA-Z]/) || number.match(/[\W]/) || number[0] == "0" || number[0] == "1" || number[0] == "2"
-      return nil
-    elsif number.length == 11 && ga11 != "1"
-      return nil
-    else
-      return number
-    end
+    numbers = number.gsub(/\D/, "").sub(/^1/, "")
+    numbers[VALID_PHONE_NUMBER]
   end
+end
+
+module BookKeeping
+  VERSION = 2
 end
 
 p PhoneNumber.clean("(223) 156-7890")
@@ -685,3 +663,228 @@ class PhoneNumber
 end
 
 p PhoneNumber.clean("12234567890")
+
+class PhoneNumber
+  def self.clean(number)
+    number.delete!("-.+ ()")
+    ga = number.chars
+    ga0 = ga.slice(0..-2).select do |x|
+      x == "0"
+    end
+    ga00 = ga0.join
+    ga1 = ga.slice(0..-2).select do |x|
+      x == "1"
+    end
+    ga11 = ga1.join
+    if number[0] == "+"
+      parts = number.split(" ")
+      parts.shift
+      clean = parts.join("").delete("-.+ ()")
+      return clean
+    elsif number.length == 11 && ga11 != "1"
+      return nil
+    elsif number.length >= 10 && ga00 == "0"
+      return nil
+    elsif number[0] == "1" && number.length == 11
+      parts = number.split("")
+      parts.shift
+      clean = parts.join("").delete("-.+ ()")
+      return clean
+    elsif number.length == 9 || number.length > 10 || number.match(/[a-zA-Z]/) || number.match(/[\W]/) || number[0] == "0" || number[0] == "1" || number[3] == "1"
+      return nil
+    else
+      return number
+    end
+  end
+end
+
+module PhoneNumber
+  def self.clean(phone_number)
+    phone_number.gsub(/\D/, "") =~ %r[\A1?([2-9]\d{2}[2-9]\d{6})\z] && $1
+  end
+end
+
+p PhoneNumber.clean("12234567890")
+p PhoneNumber.clean("(223) 156-7890")
+
+class Diamond
+  def self.make_diamond(thap)
+    return "A\n" if thap == "A"
+    tam_giac = ("A"..thap).to_a
+    tam_giac[0..tam_giac.size - 1].each_with_index do |item, index|
+      print " " * (tam_giac.size - index - 1)
+      puts(item + " " * (2 * index) + item)
+    end
+    (tam_giac.size - 2).downto(0) do |item|
+      char = ("A"..thap).to_a[item]
+      print (" " * (tam_giac.size - item - 1))
+      puts (char + " " * (2 * item) + char)
+    end
+  end
+end
+
+print Diamond.make_diamond ("E")
+
+# p [("A".."Z").zip(1..26)]
+# a = Hash[("A".."Z").zip(1..26)]
+# p a
+
+thap = ("A".."E").to_a
+# b = thap.join
+# c = b.reverse + b[1..-1]
+# half_diamond = thap.map { |letter| c.gsub(/[^#{letter}]/, " ") + "\n" }
+# ga = (half_diamond += half_diamond[0..-2].reverse).join
+# print ga
+thap = ("A".."E").to_a
+thap[0..-1].each_with_index do |char, i|
+  print " " * (thap.size - i)
+  puts (char + " " * (2 * i) + char)
+end
+
+(thap.size - 2).downto(0) do |i|
+  char = ("A".."").to_a[i]
+  print " " * (thap.size - i)
+  puts (char + " " * (2 * i) + char)
+end
+
+module Diamond
+  def self.make_diamond(letter)
+    return "A\n" if letter == "A"
+    a = ("A"..letter).to_a
+    b = a.join
+    c = b.reverse + b[1..-1]
+    half_diamond = a.map { |letter| c.gsub(/[^#{letter}]/, " ") + "\n" }
+    (half_diamond += half_diamond[0..-2].reverse).join
+  end
+end
+
+print Diamond.make_diamond ("E").to_s
+
+p %w(a b)
+
+class S
+  @@val = 0
+
+  def initialize
+    @@val += 1
+  end
+end
+
+class C < S
+  class << C
+    @@val += 1
+  end
+end
+
+C.new
+C.new
+S.new
+S.new
+
+p C.class_variable_get(:@@val)
+
+class Speaker
+  @message = "Hello!"
+
+  class << self
+    @message = "Howdy!"
+
+    def speak
+      @message
+    end
+  end
+end
+
+puts Speaker.speak
+
+puts Speaker.instance_variable_get(:@message)
+
+puts Speaker.singleton_class.instance_variable_get(:@message)
+
+module M
+  def refer_const
+    CONST
+  end
+end
+
+module E
+  CONST = "010"
+end
+
+class D
+  CONST = "001"
+end
+
+class C < D
+  include E
+  include M
+  CONST = "100"
+end
+
+c = C.new
+p c.refer_const
+
+def reader_method(s)
+  <<~EOF
+    def #{s}
+      @#{s}
+    end
+  EOF
+end
+
+print reader_method("foo")
+
+a = 1
+b = 2
+p x = a || b
+require "date"
+d = DateTime.now - DateTime.new(2015, 10, 1)class Darts
+attr_accessor :x, :y
+
+def initialize(x, y)
+  @x = x
+  @y = y
+end
+
+def score
+  Math.sqrt((@y.x - @x.x) ** 2 + (@y.y - @x.y) ** 2)
+end
+end
+
+darts = Darts.new(-9, 9)
+p darts.score
+p d.class
+
+class Darts
+  attr_accessor :x, :y
+
+  def initialize(x, y)
+    @x = x
+    @y = y
+  end
+
+  def score
+    Math.sqrt((@y - @x) ** 2 + (@y - @x) ** 2)
+  end
+end
+
+darts = Darts.new(-9, 9)
+p darts.score
+
+class Coordinate
+  attr_accessor :x, :y
+
+  def initialize(x, y)
+    @x = x
+    @y = y
+  end
+
+  def distance_to(other)
+    Math.sqrt((@x - other.x) ** 2 + (@y - other.y) ** 2)
+  end
+end
+
+# Sử dụng class Coordinate
+a = Coordinate.new(3, 4)
+b = Coordinate.new(1, 2)
+p a.distance_to(b)
