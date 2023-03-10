@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
-  http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
+  http_basic_authenticate_with name: "admin", password: "123456", except: [:index, :show]
 
-  def index
+  def index # cac actions (GET)
     @articles = Article.all
   end
 

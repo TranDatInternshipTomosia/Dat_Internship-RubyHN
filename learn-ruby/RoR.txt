@@ -1,0 +1,61 @@
+Mô Hình MVC
+- Mô hình MVC là mẫu kiến trúc phân tách một ứng dụng thành 3 thành phần logic chình
+Model,View,Controller, MVC tách lớp logic nghiệp vụ và lớp hiện thị ra riêng biệt.
+- Model: Bao gồm tất cả dữ liệu logic và liên quan đến chúng
+- View: Trình bày dữ liệu cho người dùng hoặc xử lý tương tác người dùng
+- Controller: Quan trọng nhất liên kết Model và View
+Ruby on rails
+- Mode(ActiveRecord) 
+Kế thừa từ lớp thư viện ActiveRecord tạo ràng buộc với các bảng CSDL. Tên phương thước được 
+tạo tự động từ tên trường của các bảng CSDL
+- View(ActionView)
+Phần trình bày dữ liệu theo 1 định dạng cụ thể đc triển khai trong thư viện Actionview, là hệ thông dự trên Ruby nhúng ERB 
+- Controller (ActionController)
+Cơ sở ứng dụng chỉ dẫn lưu lượng
+
+REST định nghĩa các quy tắc kiến trúc thiết kế Web services, chú trọng vào tài nguyên hệ thống
+bao gồm các trạng thái tài nguyên được định đạnh và truyền qua HTTP
+-4 nguyên tác tuân thủ thiết kế
+	Sử dụng phương thức HTTP 1 cách rõ dàng:
+		POST tạo mới 1 tài nguyên
+		GET truy xúât 1 tài nguyên
+		PUT/PATCH cập nhật tài nguyên
+		DELETE xóa tài nguyên
+- Resources
+	các đặc tính của Resources
+		- Hiện thị dữ liệu
+		- Nhận diện rõ ràng
+		- Dữ liệu điều khiển: cache-control
+		- Dữ liệu mô tả
+RESTfull Route:
+
+Method	Action	URL								Route (Controller#Action)					Mô tả
+GET	     index	/posts					posts#index							Hiển thị danh sách các bài viết
+GET	      new		/posts/new			posts#new							Trả về trang HTML chứa form để tạo bài viết
+GET	      show	/posts/:id			posts#show						Hiển thị một bài viết với id cho trước
+GET	      edit	/posts/:id/edit	posts#edit			Trả về trang HTML chứa form để chỉnh sửa bài viết
+POST	    create	/posts				posts#create									Tạo bài viết
+PATCH/PUT	update	/posts/:id		posts#update							Cập nhật bài viết với id cho trước
+DELETE	  delete	/posts/:id		posts#destroy						Xoá bài viết với id cho trước
+
+Phân biệt PUT va PATCH
+	cả 2 điều cập nhật thông tin cho resource
+		PUT(UPDATE): Cập nhật toàn bộ thông tin cho Resourse(khi bạn muốn tạo mới hay thay thế
+									resource nếu có)
+		PATCH(UPDATE): Cập nhật một phần hoặc toàn bộ thông tin của Resource
+		
+		
+Các Model đều kế thừa ApplicationRecord và kế thừa từ ActiveRecord::Base có khả năng giao tiếp
+các cơ sở dữ liệu
+r
+
+	*các lệnh ruby on rails
+		- rails db:migrate : Thực thi các migration để thực hiện các thay đổi trong CSDL
+		- rails console : mở màn hình console tương tác các với ứng dụng
+		- rails routes : hiện thị các danh sách route trong ứng dụng
+		- rails db:send thực thi các tập lệnh seed để điền dữ liệu mẫu vào CSDL
+		- rails db: create :Tạo mới CSDL
+		- rails db:drop : xóa CSDL
+		- rails assets:percompile :tạo các tài nguyên tĩnh
+		- rails db:rollback : Quay lại phiên bản CSDL
+

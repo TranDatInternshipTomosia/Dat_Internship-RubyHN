@@ -1,7 +1,11 @@
 <h1>Danh sach thu ho</h1>
-
 Our blog has <%= Article.public_count %> articles and counting!
-
+<%# <table>
+  <thead>
+    <tr>
+    </tr>
+  </thead>
+</table> %>
 <ul>
   <% @articles.each do |article| %>
     <% unless article.archived? %>
@@ -11,5 +15,4 @@ Our blog has <%= Article.public_count %> articles and counting!
     <% end %>
   <% end %>
 </ul>
-
 <%= link_to "New Article", new_article_path %>

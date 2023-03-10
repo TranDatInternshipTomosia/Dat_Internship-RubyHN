@@ -1,3 +1,9 @@
+Http là giao thức
+Tên trong view phải ứng với tên các action trong controller
+biến intance_var có thể gọi trong view
+has_many mối quan hệ như là 1 n , n n ,1 1
+
+//
 default: &default
   adapter: mysql2
   encoding: utf8
@@ -19,3 +25,4 @@ production:
   database: blog_production
   username: anhdat123exx
   password: <%= ENV['LOGIN_APP_DATABASE_PASSWORD'] %>
+  //
