@@ -14,15 +14,29 @@ default: &default
 
 development:
   <<: *default
-  database: blog
+  database: ecommerce_rails_development
   
 test:
   <<: *default
-  database: blog_test
+  database: ecommerce_rails_test
   
 production:
   <<: *default
-  database: blog_production
+  database: ecommerce_rails_production
   username: anhdat123exx
   password: <%= ENV['LOGIN_APP_DATABASE_PASSWORD'] %>
   //
+  
+  
+link_to là 1 phương thức có 3 tham số
+	1 là tên thẻ 
+	2 là path (đường dẫn/liên kết)
+	3 tùy chonk
+	vd: link_to "Sign up now!", '#', class: "btn btn-lg btn-primary" 
+ 
+image_tag là 1 phương thức có 3 tham số
+
+	1 đường dẫn ảnh
+	2 tên thay thế nếu lỗi hiện thị
+	3 thuộc tính CSS
+	vd: image_tag("rails.svg", alt: "Rails logo", width: "200")
