@@ -34,7 +34,7 @@ GET	     index	/posts					posts#index							Hiển thị danh sách các bài vi
 GET	      new		/posts/new			posts#new							Trả về trang HTML chứa form để tạo bài viết
 GET	      show	/posts/:id			posts#show						Hiển thị một bài viết với id cho trước
 GET	      edit	/posts/:id/edit	posts#edit			Trả về trang HTML chứa form để chỉnh sửa bài viết
-POST	    create	/posts				posts#create									Tạo bài viết
+POST	    create	/posts				posts#create									Tạo bài viết a
 PATCH/PUT	update	/posts/:id		posts#update							Cập nhật bài viết với id cho trước
 DELETE	  delete	/posts/:id		posts#destroy						Xoá bài viết với id cho trước
 
@@ -58,4 +58,8 @@ r
 		- rails db:drop : xóa CSDL
 		- rails assets:percompile :tạo các tài nguyên tĩnh
 		- rails db:rollback : Quay lại phiên bản CSDL
+		
+		
+		
+Callback là một phương thức của Active Record, nó sẽ được gọi tới vào một thời điểm nào đó trong vòng đời của một đối tượng (Thêm, cập nhập, xóa đối tượng). Callback thường được dùng để thực thi các phương thức logic trước hoặc sau khi đối tượng có một sự thay đổi nào đó.
 

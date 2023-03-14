@@ -40,3 +40,4 @@ image_tag là 1 phương thức có 3 tham số
 	2 tên thay thế nếu lỗi hiện thị
 	3 thuộc tính CSS
 	vd: image_tag("rails.svg", alt: "Rails logo", width: "200")
+	https://guides.rubyonrails.org/
