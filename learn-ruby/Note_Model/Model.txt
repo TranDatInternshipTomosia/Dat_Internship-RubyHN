@@ -1,0 +1,23 @@
+ORM là gì ?
+	Object Relational Mapping là một kỹ năng lập trình giúp chuyển đổi data giữa hệ thống
+	trong lập trình hương đối tượng tạo ra một CSDL object ảo, sử dụng bên trong lập trình
+	
+	Là 1 layer nằm giữa ngôn ngữ lập trình và database,viết bằng huớng đôí tượng để thao 
+	tác với database mà ko cần viết câu lệnh truy vấn các object class như là tuơng ứng
+	với tên bảng và các object instance sẽ tương ưng như cacs bản ghi
+	
+Active Record là gì?
+	Rails hoạt động đồng thời 7 gem cùng nhau. Active Record đóng vai trò của 1 ORM 
+	có nhiệm vụ thao tác và xử lý database đơn giản hóa lại
+
+Rails Model
+	Active Record giao tiếp với DB. Model là nơi xử lý hầu hết các business logic của ứng dụng
+	
+Validations
+	xử lý các điều kiện xử lý đưa vào DB
+
+Callback 
+	chạy các method thời điểm định trước
+	
+Associations #
+
