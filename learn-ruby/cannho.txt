@@ -41,3 +41,13 @@ image_tag là 1 phương thức có 3 tham số
 	3 thuộc tính CSS
 	vd: image_tag("rails.svg", alt: "Rails logo", width: "200")
 	https://guides.rubyonrails.org/
+	
+Trong database các bảng kết nối diagram
+ Tên khoá ngoại có dang tên bảng(số ít)_id
+ vd: để kết nối với khóa chính với bảng item khóa ngoại bảng oders có trường là id_item
+
+
+Link Model
+ Callback: https://guides.rubyonrails.org/active_record_callbacks.html
+ Validates: https://guides.rubyonrails.org/active_record_basics.html
+ Truy vấn Sql ActiveRecord: https://guides.rubyonrails.org/active_record_querying.html
