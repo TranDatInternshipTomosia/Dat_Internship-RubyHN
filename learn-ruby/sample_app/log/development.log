@@ -9563,3 +9563,745 @@ Processing by Rails::InfoController#routes as */*
 Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 2840)
 
 
+Started GET "/" for 127.0.0.1 at 2023-03-17 15:11:17 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.5ms | Allocations: 600)
+  Rendered layouts/_shim.html.erb (Duration: 0.2ms | Allocations: 98)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 18.7ms | Allocations: 9538)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 202)
+  Rendered layout layouts/application.html.erb (Duration: 108.9ms | Allocations: 64691)
+Completed 200 OK in 114ms (Views: 108.4ms | ActiveRecord: 2.3ms | Allocations: 67650)
+
+
+Started GET "/signup" for 127.0.0.1 at 2023-03-17 15:11:18 +0700
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 213)
+  Rendered users/new.html.erb within layouts/application (Duration: 8.7ms | Allocations: 4373)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 9)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 866)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 67)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 10496)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.2ms | Allocations: 11199)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-17 15:11:19 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f72fb723218>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 2.2ms | Allocations: 2545)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 7039)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 8)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 825)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 12975)
+Completed 200 OK in 15ms (Views: 11.3ms | ActiveRecord: 0.6ms | Allocations: 17014)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-17 15:13:14 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.4ms | Allocations: 600)
+  Rendered layouts/_shim.html.erb (Duration: 0.3ms | Allocations: 98)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 15.4ms | Allocations: 9319)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 199)
+  Rendered layout layouts/application.html.erb (Duration: 99.0ms | Allocations: 56280)
+Completed 200 OK in 106ms (Views: 98.1ms | ActiveRecord: 2.8ms | Allocations: 59240)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-17 15:15:15 +0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 1.2ms | Allocations: 600)
+  Rendered layouts/_shim.html.erb (Duration: 0.3ms | Allocations: 103)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 14.7ms | Allocations: 9319)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 199)
+  Rendered layout layouts/application.html.erb (Duration: 178.4ms | Allocations: 97709)
+Completed 200 OK in 184ms (Views: 177.8ms | ActiveRecord: 2.4ms | Allocations: 100669)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-17 15:15:16 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 116)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 9)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.1ms | Allocations: 836)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 7612)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.7ms | Allocations: 7881)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-17 15:15:17 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 116)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 9)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 835)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 57.5ms | Allocations: 7670)
+Completed 200 OK in 59ms (Views: 57.8ms | ActiveRecord: 0.2ms | Allocations: 7938)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-17 15:15:18 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 116)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 9)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.8ms | Allocations: 835)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 7617)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.3ms | Allocations: 7884)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-17 15:15:18 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 116)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 9)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.7ms | Allocations: 828)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 7595)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.3ms | Allocations: 7860)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-17 15:15:18 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 116)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 9)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.7ms | Allocations: 828)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 7573)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.3ms | Allocations: 7839)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-17 15:15:18 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 116)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 9)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 3.0ms | Allocations: 828)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 7576)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 1.2ms | Allocations: 7842)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-17 15:15:18 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 116)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 9)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.5ms | Allocations: 828)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 7582)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.3ms | Allocations: 7847)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-17 15:15:19 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 116)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 9)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 828)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 7579)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.3ms | Allocations: 7844)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-17 15:15:19 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 116)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 9)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 828)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 7585)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.4ms | Allocations: 7850)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-17 15:15:19 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 116)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 9)
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 4.3ms | Allocations: 828)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 7585)
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 1.4ms | Allocations: 7850)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-17 15:15:19 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 116)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 9)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 828)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 7712)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.3ms | Allocations: 7979)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-17 15:15:19 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 116)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 9)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.5ms | Allocations: 835)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 7615)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.3ms | Allocations: 7883)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-17 15:15:20 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 116)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 9)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 828)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 7577)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.3ms | Allocations: 7842)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-17 15:15:20 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 116)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 9)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 828)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 7591)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.2ms | Allocations: 7857)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-17 15:15:20 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 116)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 9)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 828)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 7608)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.3ms | Allocations: 7873)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-17 15:15:21 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 116)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 9)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 828)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 7578)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.3ms | Allocations: 7844)
+
+
+Started GET "/signup" for 127.0.0.1 at 2023-03-17 15:15:22 +0700
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 213)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 3855)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 9)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.7ms | Allocations: 862)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 67)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 11204)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.3ms | Allocations: 11901)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-17 15:15:23 +0700
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f910c7dbaf0>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 3.6ms | Allocations: 2544)
+  Rendered users/new.html.erb within layouts/application (Duration: 9.5ms | Allocations: 7084)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 8)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.5ms | Allocations: 825)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | Allocations: 14283)
+Completed 200 OK in 33ms (Views: 24.9ms | ActiveRecord: 1.3ms | Allocations: 18351)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-17 15:15:24 +0700
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f910c9c85c0>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 3.4ms | Allocations: 2298)
+  Rendered users/new.html.erb within layouts/application (Duration: 9.6ms | Allocations: 6780)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 8)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 825)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 13977)
+Completed 200 OK in 25ms (Views: 18.5ms | ActiveRecord: 0.8ms | Allocations: 17340)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-17 15:15:24 +0700
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f910c7f88f8>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 3.2ms | Allocations: 2298)
+  Rendered users/new.html.erb within layouts/application (Duration: 9.2ms | Allocations: 6780)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 8)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 825)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 13927)
+Completed 200 OK in 23ms (Views: 17.5ms | ActiveRecord: 0.8ms | Allocations: 17285)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-17 15:15:24 +0700
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f910c8cc590>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 3.1ms | Allocations: 2298)
+  Rendered users/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 6780)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 8)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 825)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 13927)
+Completed 200 OK in 24ms (Views: 17.6ms | ActiveRecord: 0.8ms | Allocations: 17306)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-17 15:15:24 +0700
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f910cd03de8>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 3.3ms | Allocations: 2298)
+  Rendered users/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 6780)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 8)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.5ms | Allocations: 825)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 13927)
+Completed 200 OK in 23ms (Views: 17.8ms | ActiveRecord: 0.9ms | Allocations: 17321)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-17 15:15:25 +0700
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f910c7a5838>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 3.0ms | Allocations: 2298)
+  Rendered users/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 6780)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 8)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.7ms | Allocations: 825)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 14013)
+Completed 200 OK in 24ms (Views: 18.6ms | ActiveRecord: 1.0ms | Allocations: 17377)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-17 15:15:25 +0700
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f910c9c23a0>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 3.2ms | Allocations: 2298)
+  Rendered users/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 6780)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 8)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 825)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | Allocations: 14008)
+Completed 200 OK in 24ms (Views: 18.3ms | ActiveRecord: 0.7ms | Allocations: 17374)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-17 15:15:25 +0700
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f910c7f23b8>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 2.9ms | Allocations: 2298)
+  Rendered users/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 6780)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 8)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 825)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 13927)
+Completed 200 OK in 23ms (Views: 18.1ms | ActiveRecord: 0.7ms | Allocations: 17294)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-17 15:15:25 +0700
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f910c8c6050>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 3.2ms | Allocations: 2298)
+  Rendered users/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 6780)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 8)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 825)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 13927)
+Completed 200 OK in 21ms (Views: 16.3ms | ActiveRecord: 0.7ms | Allocations: 17309)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-17 15:15:26 +0700
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f910cd2d990>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 3.0ms | Allocations: 2298)
+  Rendered users/new.html.erb within layouts/application (Duration: 8.7ms | Allocations: 6780)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 8)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 825)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 13927)
+Completed 200 OK in 22ms (Views: 17.6ms | ActiveRecord: 0.7ms | Allocations: 17276)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-17 15:15:26 +0700
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f910c87f5b0>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 2.8ms | Allocations: 2298)
+  Rendered users/new.html.erb within layouts/application (Duration: 7.9ms | Allocations: 6780)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 8)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 825)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 14038)
+Completed 200 OK in 22ms (Views: 17.0ms | ActiveRecord: 0.7ms | Allocations: 17381)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-17 15:15:30 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 116)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 9)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.7ms | Allocations: 828)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 7613)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.3ms | Allocations: 7878)
+
+
+Started GET "/signup" for 127.0.0.1 at 2023-03-17 15:15:31 +0700
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered users/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1394)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 8)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.8ms | Allocations: 828)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 8682)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.3ms | Allocations: 8963)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-17 15:15:32 +0700
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f910c835280>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 3.0ms | Allocations: 2298)
+  Rendered users/new.html.erb within layouts/application (Duration: 9.6ms | Allocations: 6780)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 8)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 825)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 13927)
+Completed 200 OK in 23ms (Views: 17.7ms | ActiveRecord: 0.7ms | Allocations: 17297)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-17 15:15:33 +0700
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f910c9673b0>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 3.1ms | Allocations: 2298)
+  Rendered users/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 6780)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 8)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.5ms | Allocations: 825)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 13927)
+Completed 200 OK in 22ms (Views: 16.9ms | ActiveRecord: 0.7ms | Allocations: 17284)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-17 15:15:33 +0700
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f911407e2f0>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 3.2ms | Allocations: 2298)
+  Rendered users/new.html.erb within layouts/application (Duration: 8.0ms | Allocations: 6780)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 8)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 825)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 13927)
+Completed 200 OK in 21ms (Views: 15.6ms | ActiveRecord: 0.7ms | Allocations: 17309)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-17 15:15:37 +0700
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"a", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f910c990d28>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"a", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 2.9ms | Allocations: 1921)
+  Rendered users/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 5829)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 8)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 825)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 13087)
+Completed 200 OK in 25ms (Views: 17.1ms | ActiveRecord: 1.2ms | Allocations: 16446)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-17 15:15:38 +0700
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"a", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f910c78dd50>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"a", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 2.6ms | Allocations: 1921)
+  Rendered users/new.html.erb within layouts/application (Duration: 7.5ms | Allocations: 5829)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 8)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 825)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 12978)
+Completed 200 OK in 22ms (Views: 17.6ms | ActiveRecord: 0.8ms | Allocations: 16343)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-17 15:15:38 +0700
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"a", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f910c883520>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"a", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 2.4ms | Allocations: 1921)
+  Rendered users/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 5829)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 8)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1[0m
+  ↳ app/helpers/sessions_helper.rb:10:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 825)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 62)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 12976)
+Completed 200 OK in 22ms (Views: 16.8ms | ActiveRecord: 1.0ms | Allocations: 16320)
+
+
