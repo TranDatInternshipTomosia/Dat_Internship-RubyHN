@@ -4415,3 +4415,116 @@ Processing by UsersController#new as HTML
   Rendered layout layouts/application.html.erb (Duration: 1.5ms | Allocations: 1036)
 Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 1642)
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (5.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS `rails_tutorial_test`[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE DATABASE `rails_tutorial_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE IF EXISTS `users` CASCADE[0m
+  [1m[35m (23.6ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` varchar(255), `email` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL, `password_digest` varchar(255), UNIQUE INDEX `index_users_on_email` (`email`)) DEFAULT CHARSET=utf8mb3[0m
+  [1m[35m (19.7ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (2.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20230314034941)[0m
+  [1m[35m (3.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20230314012834),
+(20230314033424);
+
+[0m
+  [1m[35m (17.8ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'test', '2023-03-16 08:00:02.573252', '2023-03-16 08:00:02.573252')[0m
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('schema_sha1', '4a605ea7823b0b48392943b354a86a580aaee95b', '2023-03-16 08:00:02.579588', '2023-03-16 08:00:02.579588')[0m
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (1.2ms)[0m  [1m[31mDELETE FROM `users`[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+UsersLoginTest: test_login_with_invalid_information
+---------------------------------------------------
+Started GET "/login" for 127.0.0.1 at 2023-03-16 15:00:02 +0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2539)
+  Rendered layouts/_shim.html.erb (Duration: 0.2ms | Allocations: 109)
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 359)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 205)
+  Rendered layout layouts/application.html.erb (Duration: 5750.0ms | Allocations: 90734)
+Completed 200 OK in 5756ms (Views: 5751.9ms | ActiveRecord: 0.0ms | Allocations: 93644)
+Started POST "/login" for 127.0.0.1 at 2023-03-16 15:00:08 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 478)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 153)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 67)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 1292)
+Completed 200 OK in 5ms (Views: 1.6ms | ActiveRecord: 1.1ms | Allocations: 2929)
+Started GET "/" for 127.0.0.1 at 2023-03-16 15:00:08 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 303)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 16)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 162)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 1392)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 2006)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM `users`[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+---------------------------------------------------
+UsersLoginTest: test_login_with_invalid_information
+---------------------------------------------------
+Started GET "/login" for 127.0.0.1 at 2023-03-16 15:01:38 +0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2538)
+  Rendered layouts/_shim.html.erb (Duration: 0.2ms | Allocations: 109)
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 359)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 205)
+  Rendered layout layouts/application.html.erb (Duration: 2238.1ms | Allocations: 57549)
+Completed 200 OK in 2243ms (Views: 2239.9ms | ActiveRecord: 0.0ms | Allocations: 60458)
+Started POST "/login" for 127.0.0.1 at 2023-03-16 15:01:40 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"session"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`email` = '' LIMIT 1[0m
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 478)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 153)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 67)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | Allocations: 1292)
+Completed 200 OK in 6ms (Views: 1.8ms | ActiveRecord: 1.9ms | Allocations: 2467)
+Started GET "/" for 127.0.0.1 at 2023-03-16 15:01:40 +0700
+Processing by StaticPagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 303)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 16)
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 162)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 1374)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 1988)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'schema_sha1' LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
