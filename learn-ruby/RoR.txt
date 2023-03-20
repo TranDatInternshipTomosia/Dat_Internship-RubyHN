@@ -63,3 +63,10 @@ r
 		
 Callback là một phương thức của Active Record, nó sẽ được gọi tới vào một thời điểm nào đó trong vòng đời của một đối tượng (Thêm, cập nhập, xóa đối tượng). Callback thường được dùng để thực thi các phương thức logic trước hoặc sau khi đối tượng có một sự thay đổi nào đó.
 
+flash.now được sự dụng để thông báo trên các trang được hiện thị
+find(id) raise ra lỗi exception
+find_by(email) trả về nil nếu ko tìm thấy email phù hợp
+
+
+
+
