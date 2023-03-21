@@ -61,10 +61,26 @@ Rails.application.configure do
 
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
-
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  host = "localhost:3000" # Local server  # Use this on the cloud IDE.
+  config.action_mailer.default_url_options = { host: host, protocol: "http" }
+  # Use this if developing on localhost.
+  # SMTP settings for gmail
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :user_name => "datsaker21@gmail.com",
+    :password => "bvxcafobawwokqgg",
+    :authentication => "plain",
+    :enable_starttls_auto => true,
+  }
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
-
+  # config.after_initialize do
+  #   uri = URI.parse("http://localhost:3000")
+  #   Launchy.open(uri.to_s)
+  # end
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 end
