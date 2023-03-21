@@ -15,14 +15,14 @@
               <%= link_to "Help",  help_path,class:"nav-link "%>
             </li>
             <% if logged_in? %>
-              <li class="nav-item dropdown"><%= link_to "Users", '#',class:"nav-link " %></li>
+              <li class="nav-item dropdown"><%= link_to "Users", users_path,class:"nav-link " %></li>
               <li class="dropdown">
                 <a href="#" class="dropdown dropdown-toggle nav-link" id="dropdownMenuButton1"  data-bs-toggle="dropdown"role="button" aria-expanded="false">
                   Account <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                   <li><%= link_to "Profile", current_user,class: "dropdown-item nav-link"  %></li>
-                  <li><%= link_to "Settings", '#',class: "dropdown-item nav-link border-top" %></li>
+                  <li><%= link_to "Settings",  edit_user_path(current_user) ,class: "dropdown-item nav-link border-top" %></li>
                   <li class="divider"></li>
                   <li>
                     <%= link_to "Log out", logout_path, method: :delete, class: "dropdown-item nav-link border-top" %>
@@ -38,23 +38,3 @@
     </nav>
   </div>
 </header>
-<ul class="nav justify-content-end  collapse navbar-collapse navbar-nav" id="bs-example-navbar-collapse-1">
-  <% if logged_in? %>
-    <li class="nav-item dropdown"><%= link_to "Users", '#',class:"nav-link " %></li>
-    <li class="dropdown">
-      <a href="#" class="dropdown dropdown-toggle nav-link" id="dropdownMenuButton1"  data-bs-toggle="dropdown"role="button" aria-expanded="false">
-        Account <b class="caret"></b>
-      </a>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li><%= link_to "Profile", current_user,class: "dropdown-item nav-link"  %></li>
-        <li><%= link_to "Settings", '#',class: "dropdown-item nav-link border-top" %></li>
-        <li class="divider"></li>
-        <li>
-          <%= link_to "Log out", logout_path,method: :delete , class: "dropdown-item nav-link border-top" %>
-        </li>
-      </ul>
-    </li>
-  <% else %>
-    <li><%= link_to "Log in", login_path,class: "nav-link" %></li>
-  <% end %>
-</ul>
