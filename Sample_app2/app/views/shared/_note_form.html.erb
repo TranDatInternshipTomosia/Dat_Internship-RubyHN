@@ -1,0 +1,11 @@
+<%= form_with(model: @note, local: true) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    Title: <%= f.text_field :title, placeholder: "Compose new title..." %>
+  </div>
+  <div class="field">
+    Description:
+    <%= f.text_area :description %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>

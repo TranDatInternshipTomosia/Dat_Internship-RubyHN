@@ -1,0 +1,6 @@
+<% if @feed_titles.any? %>
+  <ol class="microposts">
+    <%= render @feed_titles %>
+  </ol>
+  <%= will_paginate @feed_titles,params: { controller: :users, action: :show } %>
+<% end %>

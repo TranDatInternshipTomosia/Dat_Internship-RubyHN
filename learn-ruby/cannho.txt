@@ -56,3 +56,21 @@ Mã trạng thái 422 (Unprocessable Entity) có nghĩa là máy chủ hiểu lo
 Cụ thể, mã trạng thái 422 thường được sử dụng trong các tình huống mà yêu cầu của client chứa các thông tin hợp lệ về cú pháp và định dạng của dữ liệu, nhưng máy chủ không thể xử lý yêu cầu đó do một số lý do khác, chẳng hạn như việc xác thực thất bại hoặc thiếu quyền truy cập.
 
 Trong đoạn văn bạn đưa ra, nói rằng mã trạng thái 422 được sử dụng vì máy chủ hiểu được loại nội dung của yêu cầu và cú pháp của yêu cầu là chính xác, nhưng máy chủ không thể xử lý các chỉ thị được chứa trong nội dung đó. Do đó, việc sử dụng mã trạng thái 400 hoặc 415 không phù hợp trong trường hợp này.
+
+
+
+
+
+
+
+
+
+
+
+
+
+_titles.html.erb
+show.html.erb
+
+_note.html.erb
+từ user tạo note có title và description
