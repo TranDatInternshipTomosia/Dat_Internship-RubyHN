@@ -45,9 +45,32 @@ image_tag là 1 phương thức có 3 tham số
 Trong database các bảng kết nối diagram
  Tên khoá ngoại có dang tên bảng(số ít)_id
  vd: để kết nối với khóa chính với bảng item khóa ngoại bảng oders có trường là id_item
-
+_header.html.erb là các parial view để tái sử dụng trang web
 
 Link Model
  Callback: https://guides.rubyonrails.org/active_record_callbacks.html
  Validates: https://guides.rubyonrails.org/active_record_basics.html
  Truy vấn Sql ActiveRecord: https://guides.rubyonrails.org/active_record_querying.html
+Mã trạng thái 422 (Unprocessable Entity) có nghĩa là máy chủ hiểu loại nội dung của yêu cầu (vì vậy mã trạng thái 415 (Unsupported Media Type) không thích hợp), và cú pháp của yêu cầu là chính xác (do đó, mã trạng thái 400 (Bad Request) không thích hợp) nhưng không thể xử lý các chỉ thị chứa trong nội dung đó.
+
+Cụ thể, mã trạng thái 422 thường được sử dụng trong các tình huống mà yêu cầu của client chứa các thông tin hợp lệ về cú pháp và định dạng của dữ liệu, nhưng máy chủ không thể xử lý yêu cầu đó do một số lý do khác, chẳng hạn như việc xác thực thất bại hoặc thiếu quyền truy cập.
+
+Trong đoạn văn bạn đưa ra, nói rằng mã trạng thái 422 được sử dụng vì máy chủ hiểu được loại nội dung của yêu cầu và cú pháp của yêu cầu là chính xác, nhưng máy chủ không thể xử lý các chỉ thị được chứa trong nội dung đó. Do đó, việc sử dụng mã trạng thái 400 hoặc 415 không phù hợp trong trường hợp này.
+
+
+
+
+
+
+
+
+
+
+
+
+
+_titles.html.erb
+show.html.erb
+
+_note.html.erb
+từ user tạo note có title và description

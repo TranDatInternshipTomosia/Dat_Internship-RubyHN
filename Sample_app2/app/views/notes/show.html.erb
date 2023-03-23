@@ -1,0 +1,13 @@
+<% provide(:title, @note.title) %>
+<div class="row">
+  <aside class="col-md-8">
+    <section class="user_info">
+      <h1>
+        Title: <%= @note.title %>
+        <p> Description:<%= @note.description %></p>
+      </h1>
+      <% if current_user?(note.user) %>
+        <%= link_to 'Delete', note,method: :delete,data: {confirm: "You Sure?"} %>
+      <% end %>
+    </section>
+  </aside>
